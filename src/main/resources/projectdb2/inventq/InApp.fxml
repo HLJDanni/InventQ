@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.InAppController">
+   <Label fx:id="usernameLabel" text="Usuario"/> <!-- Asegúrate de que el fx:id coincida con el campo en el controlador -->
+   <Label fx:id="favChannelLabel" text="Canal Favorito"/> <!-- Asegúrate de que el fx:id coincida con el campo en el controlador -->
+</VBox>
