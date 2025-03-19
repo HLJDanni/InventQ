@@ -12,9 +12,13 @@ Integración con Power BI: Exportación de datos en formato Excel o CSV para an�
 
 <h2>Tecnología y Herramientas Utilizadas</h2>
 Back-End (Java): Lógica de negocio y desarrollo de APIs REST para manejar las operaciones del sistema (crear, leer, actualizar, eliminar datos en la base de datos).
+
 Base de Datos: SQL Server o MySQL para almacenar la información sobre productos, proveedores y movimientos de inventario.
+
 Front-End: JavaFX para el diseño de la interfaz de usuario, con formularios y tablas interactivas.
+
 Exportación de Datos: OpenCSV para generar archivos CSV que se pueden importar a Power BI.
+
 Power BI: Para la creación de dashboards y análisis visual de los datos exportados.
 
 
