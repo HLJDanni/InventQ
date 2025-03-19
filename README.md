@@ -6,8 +6,11 @@ InventQ permite a las empresas llevar un registro detallado de sus inventarios y
 
 <h2>Características Principales</h2>
 Gestión de Inventarios: Agregar, actualizar y eliminar productos. Gestionar los niveles de existencias, proveedores y movimientos de inventario.
+
 Informes Dinámicos: Generar reportes sobre ventas, movimientos de inventario y proyecciones de stock.
+
 Base de Datos: Almacenamiento de los datos en bases de datos SQL (SQL Server o MySQL).
+
 Integración con Power BI: Exportación de datos en formato Excel o CSV para análisis y visualización de datos a través de Power BI.
 
 <h2>Tecnología y Herramientas Utilizadas</h2>
