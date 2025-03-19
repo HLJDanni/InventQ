@@ -1,4 +1,4 @@
-**InventQ - Sistema de Gestión de Inventarios**
+<h1>**InventQ - Sistema de Gestión de Inventarios**</h1>
 InventQ es un sistema completo para la administración de inventarios de productos. Permite a los usuarios gestionar de manera eficiente el ciclo de vida de los productos, controlar las existencias, realizar actualizaciones y eliminar productos, así como generar informes detallados para facilitar la toma de decisiones.
 
 **Descripción del Proyecto**
