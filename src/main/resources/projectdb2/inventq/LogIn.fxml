@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="527.0"
+      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="projectdb2.inventq.Controller">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="182.0" style="-fx-background-color: #4DA8DA;">
+         <children>
+            <ImageView fitHeight="183.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../LogoInventQ.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="39.0" layoutY="200.0" text="(502) 3993-4454">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="228.0" text="dgonzalezj4@miumg.edu.gt">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="346.0">
+         <children>
+            <Label layoutX="21.0" layoutY="38.0" text="Username">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="94.0" text="Password">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="144.0" text="The best inventory system" textFill="#4da8da">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_username" layoutX="140.0" layoutY="34.0" />
+            <PasswordField fx:id="tf_password" layoutX="140.0" layoutY="90.0" />
+            <RadioButton fx:id="rb_InventQ" layoutX="123.0" layoutY="177.0" mnemonicParsing="false" text="InventQ">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="rb_Someone_Else" layoutX="123.0" layoutY="207.0" mnemonicParsing="false" text="Someone Else">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="bt_logIn" layoutX="128.0" layoutY="257.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="91.0"
+                    style="-fx-background-color: #4DA8DA;" text="LogIn" >
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="72.0" layoutY="330.0" text="Already a member?">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="bt_signUp" layoutX="202.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0"
+                    style="-fx-background-color: transparent;" text="Sign Up!" textFill="#4725f2" underline="true" >
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
+
