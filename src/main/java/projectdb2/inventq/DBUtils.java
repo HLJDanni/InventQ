@@ -186,4 +186,58 @@ public class DBUtils {
             }
         }
     }
+/*DESDE ACÁ SE COMIENZAN A GENERAR LOS INSERTS UPDATES, DELETES Y REFRESH PARA CADA TABLA
+    CATEOGORÍA > PRODUCTO CATEGORÍA > MOVIMIENTO INVENTARIO >PRODUCTO
+	CONTACTO_PROVEEDOR >  MOVIMIENTO INVENTARIO > PROVEEDOR
+
+*/
+
+
+
+    public static void insertProveedor(String nombre, String telefono, String email, String direccion) throws SQLException {
+        String query = "INSERT INTO proveedor (Nombre, Telefono, Email, Direccion) VALUES (?, ?, ?, ?)";
+        try (Connection connection = getConnection(); // Usa un try-with-resources para manejar la conexión
+             PreparedStatement psInsert = connection.prepareStatement(query)) {
+
+            psInsert.setString(1, nombre);
+            psInsert.setString(2, telefono);
+            psInsert.setString(3, email);
+            psInsert.setString(4, direccion);
+            psInsert.executeUpdate();
+
+            //System.out.println("Proveedor insertado correctamente."); // Agrega un mensaje de éxito
+        } catch (SQLException e) {
+            System.out.println("Error al insertar el proveedor: " + e.getMessage());
+            throw e; // Lanza de nuevo la excepción para que el controlador pueda manejarla
+        }
+    }
+
+    public static void updateProveedor(int id, String nombre, String telefono, String email, String direccion) throws SQLException {
+        String query = "UPDATE proveedor SET Nombre = ?, Telefono = ?, Email = ?, Direccion = ? WHERE ProveedorID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psUpdate = connection.prepareStatement(query)) {
+            psUpdate.setString(1, nombre);
+            psUpdate.setString(2, telefono);
+            psUpdate.setString(3, email);
+            psUpdate.setString(4, direccion);
+            psUpdate.setInt(5, id);
+            psUpdate.executeUpdate();
+        }
+    }
+
+    public static void deleteProveedor(int id) throws SQLException {
+        String query = "DELETE FROM proveedor WHERE ProveedorID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psDelete = connection.prepareStatement(query)) {
+            psDelete.setInt(1, id);
+            psDelete.executeUpdate();
+        }
+    }
+
+    public static ResultSet getProveedores() throws SQLException {
+        String query = "SELECT * FROM proveedor";
+        Connection connection = getConnection();
+        PreparedStatement psSelect = connection.prepareStatement(query);
+        return psSelect.executeQuery();
+    }
 }

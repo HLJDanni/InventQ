@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="278.0" prefWidth="392.0" styleClass="panelprincipal" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.InAppController">
+<VBox prefHeight="278.0" prefWidth="392.0" style="-fx-background-color: #ffffff;" styleClass="panelprincipal" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.InAppController">
    <Label fx:id="usernameLabel" text="Usuario">
       <font>
          <Font name="Comic Sans MS" size="12.0" />
@@ -16,9 +16,9 @@
       </font></Label>
    <BorderPane prefHeight="285.0" prefWidth="474.0">
       <right>
-         <AnchorPane prefHeight="253.0" prefWidth="276.0" BorderPane.alignment="CENTER">
+         <AnchorPane prefHeight="253.0" prefWidth="276.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
             <children>
-               <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="63.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="137.0" fitWidth="150.0" layoutX="63.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@../../InventQLogo.png" />
                   </image>
@@ -26,33 +26,33 @@
             </children></AnchorPane>
       </right>
       <center>
-         <AnchorPane prefHeight="218.0" prefWidth="174.0" styleClass="panelprincipal" stylesheets="@StyleSheet.css" BorderPane.alignment="CENTER">
+         <AnchorPane prefHeight="242.0" prefWidth="132.0" style="-fx-background-color: #ffffff;" styleClass="panelprincipal" BorderPane.alignment="CENTER">
             <children>
-               <Button fx:id="bt_proveedor" layoutX="-1.0" layoutY="26.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Proveedor" textAlignment="CENTER" wrapText="true">
+               <Button fx:id="bt_proveedor" layoutX="-2.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: #4DA8DA;" text="Proveedor" textAlignment="CENTER" wrapText="true">
                   <font>
-                     <Font name="Comic Sans MS Italic" size="12.0" />
+                     <Font name="Arial" size="12.0" />
                   </font></Button>
-               <Button layoutX="-1.0" layoutY="80.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Categoria de Prod" textAlignment="CENTER" wrapText="true">
+               <Button layoutX="-2.0" layoutY="81.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: #4DA8DA;" text="Categoria de Prod" textAlignment="CENTER" wrapText="true">
                   <font>
-                     <Font name="Comic Sans MS Italic" size="12.0" />
+                     <Font name="Arial" size="12.0" />
                   </font></Button>
-               <Button layoutY="107.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Producto" textAlignment="CENTER" wrapText="true">
+               <Button layoutX="-1.0" layoutY="112.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #4DA8DA;" text="Producto" textAlignment="CENTER" wrapText="true">
                   <font>
-                     <Font name="Comic Sans MS Italic" size="12.0" />
+                     <Font name="Arial" size="12.0" />
                   </font></Button>
-               <Button layoutX="-3.0" layoutY="134.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Producto Categoría" textAlignment="CENTER" wrapText="true">
+               <Button layoutX="-3.0" layoutY="143.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #4DA8DA;" text="Producto Categoría" textAlignment="CENTER" wrapText="true">
                   <font>
-                     <Font name="Comic Sans MS Italic" size="12.0" />
+                     <Font name="Arial" size="12.0" />
                   </font></Button>
-               <Button layoutX="-1.0" layoutY="53.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Contacto Proveedor" textAlignment="CENTER" wrapText="true">
+               <Button layoutX="-2.0" layoutY="49.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: #4DA8DA;" text="Contacto Proveedor" textAlignment="CENTER" wrapText="true">
                   <font>
-                     <Font name="Comic Sans MS Italic" size="12.0" />
+                     <Font name="Arial" size="12.0" />
                   </font></Button>
-               <Button layoutX="-1.0" layoutY="160.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Movimiento Inventario" textAlignment="CENTER" wrapText="true">
+               <Button layoutX="-1.0" layoutY="174.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #4DA8DA;" text="Movimiento Inventario" textAlignment="CENTER" wrapText="true">
                   <font>
-                     <Font name="Comic Sans MS Italic" size="12.0" />
+                     <Font name="Arial" size="12.0" />
                   </font></Button>
-               <Button layoutX="47.0" layoutY="209.0" mnemonicParsing="false" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Users">
+               <Button layoutX="47.0" layoutY="206.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Users">
                   <font>
                      <Font name="System Bold Italic" size="12.0" />
                   </font></Button>

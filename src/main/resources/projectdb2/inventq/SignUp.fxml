@@ -14,7 +14,7 @@
                   <Image url="@../../InventQLogo.png" />
                </image>
             </ImageView>
-            <Label layoutX="39.0" layoutY="200.0" text="(502) 3993-4454">
+            <Label layoutX="39.0" layoutY="200.0" text="(502) 3993-4454">s
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
