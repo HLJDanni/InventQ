@@ -37,4 +37,4 @@ Crea las tablas necesarias para almacenar las entidades del sistema, como produc
 Diseña la interfaz de usuario para interactuar con el sistema. Utiliza JavaFX para crear formularios de entrada de datos, tablas interactivas para mostrar la información y botones para realizar las operaciones del sistema. Ejemplos de funcionalidades incluyen registrar ventas, visualizar inventarios y actualizar productos.
 
 4. Integración con Power BI
-Exporta los datos necesarios desde la aplicación en el área de "Exportar Datos desde SQL Server" Power BI pueda importar fácilmente. Para la exportación de datos, se utiliza la biblioteca OpenCSV en el front-end de JavaFX. 
+Exporta los datos necesarios desde la aplicación en el área de "Exportar Datos desde SQL Server" para que Power BI pueda importar fácilmente. De esta forma proceder a realizar la limpieza, carga y transformación de datos, y así mismo la realización del Análisis y su respectivo dashboard.
