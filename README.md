@@ -20,7 +20,7 @@ Base de Datos: SQL Server o MySQL para almacenar la información sobre productos
 
 Front-End: JavaFX para el diseño de la interfaz de usuario, con formularios y tablas interactivas.
 
-Exportación de Datos: OpenCSV para generar archivos CSV que se pueden importar a Power BI.
+Exportación de Datos: Exportación de datos a través de POWER BI, en el apartado "SQL Server".
 
 Power BI: Para la creación de dashboards y análisis visual de los datos exportados.
 
@@ -37,5 +37,4 @@ Crea las tablas necesarias para almacenar las entidades del sistema, como produc
 Diseña la interfaz de usuario para interactuar con el sistema. Utiliza JavaFX para crear formularios de entrada de datos, tablas interactivas para mostrar la información y botones para realizar las operaciones del sistema. Ejemplos de funcionalidades incluyen registrar ventas, visualizar inventarios y actualizar productos.
 
 4. Integración con Power BI
-Exporta los datos necesarios desde la aplicación en formato Excel o CSV que Power BI pueda importar fácilmente. Para la exportación de datos, se utiliza la biblioteca OpenCSV en el front-end de JavaFX. Alternativamente, si es posible, se puede configurar una API para integrar directamente los datos con Power BI, permitiendo la visualización dinámica de la información.
-
+Exporta los datos necesarios desde la aplicación en el área de "Exportar Datos desde SQL Server" Power BI pueda importar fácilmente. Para la exportación de datos, se utiliza la biblioteca OpenCSV en el front-end de JavaFX. 
