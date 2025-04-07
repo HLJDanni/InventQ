@@ -53,7 +53,7 @@ public class DBUtils {
             // Si se proporcionan username y favChannel, configurar el controlador
             if (username != null && favChannel != null) {
                 InAppController controller = loader.getController(); // Cambia a InAppController
-                controller.setUserInformation(username, favChannel); // Asegúrate de que este método exista en InAppController
+                controller.setUserInformation(username, favChannel); // Asegúrate de que este metodo exista en InAppController
             }
 
             // Cambiar la escena
@@ -79,7 +79,7 @@ public class DBUtils {
             connection = getConnection();
 
             // Verificar si el usuario ya existe
-            psCheckUserExist = connection.prepareStatement("SELECT * FROM log_in WHERE username = ?");
+            psCheckUserExist = connection.prepareStatement("SELECT * FROM usuario WHERE username = ?");
             psCheckUserExist.setString(1, username);
             rs = psCheckUserExist.executeQuery();
 
@@ -90,7 +90,7 @@ public class DBUtils {
                 alert.show();
             } else {
                 // Insertar nuevo usuario (sin incluir la columna 'id')
-                psInsert = connection.prepareStatement("INSERT INTO log_in (username, contraseña, favChannel) VALUES (?, ?, ?)");
+                psInsert = connection.prepareStatement("INSERT INTO usuario (username, password, favChannel) VALUES (?, ?, ?)");
                 psInsert.setString(1, username);
                 psInsert.setString(2, password);
                 psInsert.setString(3, favChannel);
@@ -126,7 +126,7 @@ public class DBUtils {
         try {
             connection = getConnection();
 
-            preparedStatement = connection.prepareStatement("SELECT contraseña, favChannel FROM log_in WHERE username = ?");
+            preparedStatement = connection.prepareStatement("SELECT password, favChannel FROM usuario WHERE username = ?");
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -137,7 +137,7 @@ public class DBUtils {
                 alert.show();
             } else {
                 while (resultSet.next()) {
-                    String retrievedPassword = resultSet.getString("contraseña");
+                    String retrievedPassword = resultSet.getString("password");
                     String retrievedChannel = resultSet.getString("favChannel");
 
                     if (retrievedPassword.equals(password)) {

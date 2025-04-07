@@ -11,7 +11,7 @@
          <children>
             <ImageView fitHeight="183.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../LogoInventQ.png" />
+                  <Image url="@../../InventQLogo.png" />
                </image>
             </ImageView>
             <Label layoutX="39.0" layoutY="200.0" text="(502) 3993-4454">

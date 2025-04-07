@@ -5,15 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="527.0"
-      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="projectdb2.inventq.Controller">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.Controller">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="182.0" style="-fx-background-color: #4DA8DA;">
          <children>
             <ImageView fitHeight="183.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../LogoInventQ.png" />
+                  <Image url="@../../InventQLogo.png" />
                </image>
             </ImageView>
             <Label layoutX="39.0" layoutY="200.0" text="(502) 3993-4454">
@@ -57,8 +55,7 @@
                   <Font name="Consolas Bold" size="16.0" />
                </font>
             </RadioButton>
-            <Button fx:id="bt_logIn" layoutX="128.0" layoutY="257.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="91.0"
-                    style="-fx-background-color: #4DA8DA;" text="LogIn" >
+            <Button fx:id="bt_logIn" layoutX="128.0" layoutY="257.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="91.0" style="-fx-background-color: #4DA8DA;" text="LogIn">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -68,8 +65,7 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="bt_signUp" layoutX="202.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0"
-                    style="-fx-background-color: transparent;" text="Sign Up!" textFill="#4725f2" underline="true" >
+            <Button fx:id="bt_signUp" layoutX="202.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: transparent;" text="Sign Up!" textFill="#4725f2" underline="true">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -78,4 +74,3 @@
       </AnchorPane>
    </children>
 </HBox>
-

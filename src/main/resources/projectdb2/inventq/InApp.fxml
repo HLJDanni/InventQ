@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.InAppController">
-   <Label fx:id="usernameLabel" text="Usuario"/> <!-- Asegúrate de que el fx:id coincida con el campo en el controlador -->
-   <Label fx:id="favChannelLabel" text="Canal Favorito"/> <!-- Asegúrate de que el fx:id coincida con el campo en el controlador -->
+<VBox prefHeight="278.0" prefWidth="392.0" styleClass="panelprincipal" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.InAppController">
+   <Label fx:id="usernameLabel" text="Usuario">
+      <font>
+         <Font name="Comic Sans MS" size="12.0" />
+      </font></Label> <!-- Asegúrate de que el fx:id coincida con el campo en el controlador -->
+   <Label fx:id="favChannelLabel" text="Canal Favorito">
+      <font>
+         <Font name="Comic Sans MS" size="12.0" />
+      </font></Label>
+   <BorderPane prefHeight="285.0" prefWidth="474.0">
+      <right>
+         <AnchorPane prefHeight="253.0" prefWidth="276.0" BorderPane.alignment="CENTER">
+            <children>
+               <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="63.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../InventQLogo.png" />
+                  </image>
+               </ImageView>
+            </children></AnchorPane>
+      </right>
+      <center>
+         <AnchorPane prefHeight="218.0" prefWidth="174.0" styleClass="panelprincipal" stylesheets="@StyleSheet.css" BorderPane.alignment="CENTER">
+            <children>
+               <Button fx:id="bt_proveedor" layoutX="-1.0" layoutY="26.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Proveedor" textAlignment="CENTER" wrapText="true">
+                  <font>
+                     <Font name="Comic Sans MS Italic" size="12.0" />
+                  </font></Button>
+               <Button layoutX="-1.0" layoutY="80.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Categoria de Prod" textAlignment="CENTER" wrapText="true">
+                  <font>
+                     <Font name="Comic Sans MS Italic" size="12.0" />
+                  </font></Button>
+               <Button layoutY="107.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Producto" textAlignment="CENTER" wrapText="true">
+                  <font>
+                     <Font name="Comic Sans MS Italic" size="12.0" />
+                  </font></Button>
+               <Button layoutX="-3.0" layoutY="134.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Producto Categoría" textAlignment="CENTER" wrapText="true">
+                  <font>
+                     <Font name="Comic Sans MS Italic" size="12.0" />
+                  </font></Button>
+               <Button layoutX="-1.0" layoutY="53.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Contacto Proveedor" textAlignment="CENTER" wrapText="true">
+                  <font>
+                     <Font name="Comic Sans MS Italic" size="12.0" />
+                  </font></Button>
+               <Button layoutX="-1.0" layoutY="160.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Movimiento Inventario" textAlignment="CENTER" wrapText="true">
+                  <font>
+                     <Font name="Comic Sans MS Italic" size="12.0" />
+                  </font></Button>
+               <Button layoutX="47.0" layoutY="209.0" mnemonicParsing="false" style="-fx-background-color: #17c9ce;" stylesheets="@StyleSheet.css" text="Users">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font></Button>
+            </children>
+         </AnchorPane>
+      </center>
+   </BorderPane> <!-- Asegúrate de que el fx:id coincida con el campo en el controlador -->
+
+   
 </VBox>
