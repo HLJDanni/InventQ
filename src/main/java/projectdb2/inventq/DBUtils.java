@@ -28,7 +28,7 @@ public class DBUtils {
         return properties;
     }
 
-    private static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         Properties properties = loadProperties();
         if (properties == null) {
             throw new SQLException("No se pudieron cargar las propiedades de la base de datos.");
@@ -52,8 +52,8 @@ public class DBUtils {
 
             // Si se proporcionan username y favChannel, configurar el controlador
             if (username != null && favChannel != null) {
-                InAppController controller = loader.getController(); // Cambia a InAppController
-                controller.setUserInformation(username, favChannel); // Asegúrate de que este metodo exista en InAppController
+                InAppController controller = loader.getController();
+                controller.setUserInformation(username, favChannel);
             }
 
             // Cambiar la escena
@@ -70,18 +70,11 @@ public class DBUtils {
     }
 
     public static void singUpUser(ActionEvent event, String username, String password, String favChannel) throws SQLException {
-        Connection connection = null;
-        PreparedStatement psCheckUserExist = null;
-        PreparedStatement psInsert = null;
-        ResultSet rs = null;
+        try (Connection connection = getConnection();
+             PreparedStatement psCheckUserExist = connection.prepareStatement("SELECT * FROM usuario WHERE username = ?")) {
 
-        try {
-            connection = getConnection();
-
-            // Verificar si el usuario ya existe
-            psCheckUserExist = connection.prepareStatement("SELECT * FROM usuario WHERE username = ?");
             psCheckUserExist.setString(1, username);
-            rs = psCheckUserExist.executeQuery();
+            ResultSet rs = psCheckUserExist.executeQuery();
 
             if (rs.next()) {
                 System.out.println("User already exists");
@@ -89,44 +82,30 @@ public class DBUtils {
                 alert.setContentText("El usuario ya existe.");
                 alert.show();
             } else {
-                // Insertar nuevo usuario (sin incluir la columna 'id')
-                psInsert = connection.prepareStatement("INSERT INTO usuario (username, password, favChannel) VALUES (?, ?, ?)");
-                psInsert.setString(1, username);
-                psInsert.setString(2, password);
-                psInsert.setString(3, favChannel);
-                psInsert.executeUpdate();
-                System.out.println("User created");
+                // Insertar nuevo usuario
+                try (PreparedStatement psInsert = connection.prepareStatement("INSERT INTO usuario (username, password, favChannel) VALUES (?, ?, ?)")) {
+                    psInsert.setString(1, username);
+                    psInsert.setString(2, password);
+                    psInsert.setString(3, favChannel);
+                    psInsert.executeUpdate();
+                    System.out.println("User created");
 
-                // Cambiar de escena después de registrar al usuario
-                DBUtils.changeScene(event, "/projectdb2/inventq/InApp.fxml", "Invent Q", username, favChannel);
+                    // Cambiar de escena después de registrar al usuario
+                    changeScene(event, "/projectdb2/inventq/InApp.fxml", "Invent Q", username, favChannel);
+                }
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Error al conectar con la base de datos.");
             alert.show();
-        } finally {
-            // Cerrar los recursos
-            try {
-                if (rs != null) rs.close();
-                if (psCheckUserExist != null) psCheckUserExist.close();
-                if (psInsert != null) psInsert.close();
-                if (connection != null) connection.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
         }
     }
 
     public static void logInUser(ActionEvent event, String username, String password) throws SQLException {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet rs = null;
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT password, favChannel FROM usuario WHERE username = ?")) {
 
-        try {
-            connection = getConnection();
-
-            preparedStatement = connection.prepareStatement("SELECT password, favChannel FROM usuario WHERE username = ?");
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -153,50 +132,30 @@ public class DBUtils {
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } finally {
-            if (preparedStatement != null) preparedStatement.close();
-            if (connection != null) connection.close();
-            if (rs != null) rs.close();
         }
     }
 
     public static void testConnection() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            try (Connection connection = getConnection()) {
+                if (connection != null) {
+                    System.out.println("Conexión exitosa a la base de datos!");
+                }
+            }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.out.println("Error al cargar el controlador JDBC de SQL Server.");
-            return;
-        }
-
-        Connection connection = null;
-        try {
-            connection = getConnection();
-            if (connection != null) {
-                System.out.println("Conexión exitosa a la base de datos!");
-            }
         } catch (SQLException ex) {
             ex.printStackTrace();
             System.out.println("Error al conectar a la base de datos.");
-        } finally {
-            try {
-                if (connection != null) connection.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
         }
     }
-/*DESDE ACÁ SE COMIENZAN A GENERAR LOS INSERTS UPDATES, DELETES Y REFRESH PARA CADA TABLA
-    CATEOGORÍA > PRODUCTO CATEGORÍA > MOVIMIENTO INVENTARIO >PRODUCTO
-	CONTACTO_PROVEEDOR >  MOVIMIENTO INVENTARIO > PROVEEDOR
 
-*/
-
-
-
+    // Métodos para Proveedor
     public static void insertProveedor(String nombre, String telefono, String email, String direccion) throws SQLException {
         String query = "INSERT INTO proveedor (Nombre, Telefono, Email, Direccion) VALUES (?, ?, ?, ?)";
-        try (Connection connection = getConnection(); // Usa un try-with-resources para manejar la conexión
+        try (Connection connection = getConnection();
              PreparedStatement psInsert = connection.prepareStatement(query)) {
 
             psInsert.setString(1, nombre);
@@ -204,11 +163,9 @@ public class DBUtils {
             psInsert.setString(3, email);
             psInsert.setString(4, direccion);
             psInsert.executeUpdate();
-
-            //System.out.println("Proveedor insertado correctamente."); // Agrega un mensaje de éxito
         } catch (SQLException e) {
             System.out.println("Error al insertar el proveedor: " + e.getMessage());
-            throw e; // Lanza de nuevo la excepción para que el controlador pueda manejarla
+            throw e;
         }
     }
 
@@ -234,10 +191,5 @@ public class DBUtils {
         }
     }
 
-    public static ResultSet getProveedores() throws SQLException {
-        String query = "SELECT * FROM proveedor";
-        Connection connection = getConnection();
-        PreparedStatement psSelect = connection.prepareStatement(query);
-        return psSelect.executeQuery();
-    }
+
 }

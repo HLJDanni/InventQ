@@ -1,4 +1,4 @@
-package projectdb2.inventq;
+package projectdb2.inventq.proveedor;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;

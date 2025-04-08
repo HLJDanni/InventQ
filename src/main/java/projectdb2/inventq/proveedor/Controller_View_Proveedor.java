@@ -1,16 +1,22 @@
 package projectdb2.inventq.proveedor;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import projectdb2.inventq.DBUtils;
-import projectdb2.inventq.IDInputDialog;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class Controller_View_Proveedor implements Initializable {
@@ -29,10 +35,19 @@ public class Controller_View_Proveedor implements Initializable {
     private Button bt_delete;
 
     @FXML
-    private Button bt_refresh;
-
-    @FXML
     private TableView<Proveedor> table_REFRESHProveedor; // Asegúrate de tener una clase Proveedor
+
+    // Declaración de las columnas
+    @FXML
+    private TableColumn<Proveedor, Integer> col_ProveedorID;
+    @FXML
+    private TableColumn<Proveedor, String> col_nombre;
+    @FXML
+    private TableColumn<Proveedor, String> col_telefono;
+    @FXML
+    private TableColumn<Proveedor, String> col_email;
+    @FXML
+    private TableColumn<Proveedor, String> col_direccion;
 
     // TEXT DENTRO DE CRUD PROVEEDORES
     @FXML
@@ -44,8 +59,21 @@ public class Controller_View_Proveedor implements Initializable {
     @FXML
     private TextArea txt_direccionproveedor;
 
+    // Declaración de la lista observable de proveedores
+    private ObservableList<Proveedor> proveedorList;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        proveedorList = FXCollections.observableArrayList(); // Inicializa la lista
+        loadData(); // Carga los datos al iniciar
+
+        // Configuración de las columnas
+        col_ProveedorID.setCellValueFactory(new PropertyValueFactory<>("proveedorID"));
+        col_nombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        col_telefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        col_direccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
+
         // Configura el evento para el botón de "Volver"
         bt_back.setOnAction(event -> {
             DBUtils.changeScene(event, "InApp.fxml", "Proveedor", null, null);
@@ -66,7 +94,7 @@ public class Controller_View_Proveedor implements Initializable {
 
                 DBUtils.insertProveedor(nombre, telefono, email, direccion);
                 System.out.println("Proveedor insertado correctamente.");
-                //refreshTable(); // Actualiza la tabla
+                loadData(); // Actualiza la tabla después de insertar
             } catch (SQLException e) {
                 System.out.println("Error al insertar el proveedor: " + e.getMessage());
                 e.printStackTrace();
@@ -94,7 +122,7 @@ public class Controller_View_Proveedor implements Initializable {
 
                     DBUtils.updateProveedor(id, nombre, telefono, email, direccion);
                     System.out.println("Proveedor actualizado correctamente.");
-                  //  refreshTable(); // Actualiza la tabla después de la actualización
+                    loadData(); // Actualiza la tabla después de la actualización
                 } catch (SQLException e) {
                     System.out.println("Error al actualizar el proveedor: " + e.getMessage());
                     e.printStackTrace();
@@ -106,7 +134,7 @@ public class Controller_View_Proveedor implements Initializable {
             }
         });
 
-
+        // Configura el evento para el botón de "Eliminar"
         bt_delete.setOnAction(event -> {
             IDInputDialog idDialog = new IDInputDialog();
             String idStr = idDialog.display(); // Obtiene el ID ingresado
@@ -115,9 +143,9 @@ public class Controller_View_Proveedor implements Initializable {
                 int id = Integer.parseInt(idStr); // Convierte el ID de String a int
 
                 try {
-                    DBUtils.deleteProveedor(id); // Llama al metodo para eliminar el proveedor
+                    DBUtils.deleteProveedor(id); // Llama al método para eliminar el proveedor
                     System.out.println("Proveedor eliminado correctamente.");
-                    //refreshTable(); // Actualiza la tabla después de eliminar
+                    loadData(); // Actualiza la tabla después de eliminar
                 } catch (SQLException e) {
                     System.out.println("Error al eliminar el proveedor: " + e.getMessage());
                     e.printStackTrace();
@@ -128,9 +156,28 @@ public class Controller_View_Proveedor implements Initializable {
                 System.out.println("No se ha ingresado un ID.");
             }
         });
-
-
     }
 
+    private void loadData() {
+        String query = "SELECT * FROM proveedor";
+        try (Connection connection = DBUtils.getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
 
+            proveedorList.clear(); // Limpia la lista antes de cargar nuevos datos
+            while (resultSet.next()) {
+                int id = resultSet.getInt("ProveedorID");
+                String nombre = resultSet.getString("Nombre");
+                String telefono = resultSet.getString("Telefono");
+                String email = resultSet.getString("Email");
+                String direccion = resultSet.getString("Direccion");
+
+                proveedorList.add(new Proveedor(id, nombre, telefono, email, direccion));
+            }
+
+            table_REFRESHProveedor.setItems(proveedorList); // Asigna la lista a la tabla
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
