@@ -14,7 +14,7 @@ Base de Datos: Almacenamiento de los datos en bases de datos SQL (SQL Server o M
 Integración con Power BI: Exportación de datos en formato Excel o CSV para análisis y visualización de datos a través de Power BI.
 
 <h2>Tecnología y Herramientas Utilizadas</h2>
-Back-End (Java): Lógica de negocio y desarrollo de APIs REST para manejar las operaciones del sistema (crear, leer, actualizar, eliminar datos en la base de datos).
+Back-End (Java): Lógica de negocio para manejar las operaciones del sistema (crear, leer, actualizar, eliminar datos en la base de datos).
 
 Base de Datos: SQL Server o MySQL para almacenar la información sobre productos, proveedores y movimientos de inventario.
 
