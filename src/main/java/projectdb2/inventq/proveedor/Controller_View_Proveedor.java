@@ -143,7 +143,7 @@ public class Controller_View_Proveedor implements Initializable {
                 int id = Integer.parseInt(idStr); // Convierte el ID de String a int
 
                 try {
-                    DBUtils.deleteProveedor(id); // Llama al método para eliminar el proveedor
+                    DBUtils.deleteProveedor(id); // Llama al metodo para eliminar el proveedor
                     System.out.println("Proveedor eliminado correctamente.");
                     loadData(); // Actualiza la tabla después de eliminar
                 } catch (SQLException e) {
