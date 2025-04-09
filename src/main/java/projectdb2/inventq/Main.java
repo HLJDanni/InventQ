@@ -15,7 +15,7 @@ public class Main extends Application {
         //Con esta línea cargo un documento a la variable fxmlLoader, el cual me permite cargar la escena y así mostrarla en la ventana mi aplicación
         Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
         primaryStage.setTitle("InventQ");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 

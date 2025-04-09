@@ -1,71 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.LogInController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.LogInController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="182.0" style="-fx-background-color: #4DA8DA;">
+      <AnchorPane prefHeight="363.0" prefWidth="200.0" style="-fx-background-color: #FFFF;">
          <children>
-            <ImageView fitHeight="183.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../InventQLogo.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="39.0" layoutY="200.0" text="(502) 3993-4454">
+            <Label layoutX="39.0" layoutY="200.0" stylesheets="@styles.css" text="(502) 3993-4454">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="17.0" layoutY="228.0" text="dgonzalezj4@miumg.edu.gt">
+            <Label layoutX="17.0" layoutY="228.0" stylesheets="@styles.css" text="dgonzalezj4@miumg.edu.gt">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
+            <Label layoutX="139.0" layoutY="68.0" styleClass="labelQ" stylesheets="@styles.css" text="Q" />
+            <Label layoutX="7.0" layoutY="68.0" prefHeight="66.0" prefWidth="177.0" styleClass="labelLogo" stylesheets="@styles.css" text="Invent" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="400.0" prefWidth="346.0">
+      <AnchorPane prefHeight="363.0" prefWidth="315.0" style="-fx-background-color: #FFFF;">
          <children>
-            <Label layoutX="21.0" layoutY="38.0" text="Username">
+            <Label layoutX="21.0" layoutY="38.0" stylesheets="@styles.css" text="Username">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="94.0" text="Password">
+            <Label layoutX="20.0" layoutY="89.0" stylesheets="@styles.css" text="Password">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="78.0" layoutY="144.0" text="The best inventory system" textFill="#4da8da">
+            <Label layoutX="78.0" layoutY="144.0" stylesheets="@styles.css" text="The Best Inventory System" textFill="#4da8da">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_username" layoutX="140.0" layoutY="34.0" />
-            <PasswordField fx:id="tf_password" layoutX="140.0" layoutY="90.0" />
-            <RadioButton fx:id="rb_InventQ" layoutX="123.0" layoutY="177.0" mnemonicParsing="false" text="InventQ">
+            <TextField fx:id="tf_username" layoutX="120.0" layoutY="27.0" stylesheets="@styles.css" />
+            <PasswordField fx:id="tf_password" layoutX="120.0" layoutY="78.0" stylesheets="@styles.css" />
+            <RadioButton fx:id="rb_InventQ" layoutX="123.0" layoutY="177.0" mnemonicParsing="false" styleClass="label" stylesheets="@styles.css" text="InventQ">
                <font>
                   <Font name="Consolas Bold" size="16.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="rb_Someone_Else" layoutX="123.0" layoutY="207.0" mnemonicParsing="false" text="Someone Else">
+            <RadioButton fx:id="rb_Someone_Else" layoutX="123.0" layoutY="207.0" mnemonicParsing="false" styleClass="label" stylesheets="@styles.css" text="Someone Else">
                <font>
                   <Font name="Consolas Bold" size="16.0" />
                </font>
             </RadioButton>
-            <Button fx:id="bt_logIn" layoutX="128.0" layoutY="257.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="91.0" style="-fx-background-color: #4DA8DA;" text="LogIn">
+            <Button fx:id="bt_logIn" layoutX="128.0" layoutY="257.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="91.0" style="-fx-background-color: #05bf6b;" stylesheets="@styles.css" text="LogIn">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Label layoutX="72.0" layoutY="330.0" text="Already a member?">
+            <Label layoutX="72.0" layoutY="330.0" stylesheets="@styles.css" text="Already a member?">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="bt_signUp" layoutX="202.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: transparent;" text="Sign Up!" textFill="#4725f2" underline="true">
+            <Button fx:id="bt_signUp" layoutX="202.0" layoutY="323.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="82.0" style="-fx-background-color: transparent;" styleClass="label" stylesheets="@styles.css" text="Sign Up!" textFill="#4725f2" underline="true">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

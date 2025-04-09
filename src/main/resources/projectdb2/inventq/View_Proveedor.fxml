@@ -3,46 +3,48 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+
 <!-- Este es un comentario en FXML -->
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.proveedor.Controller_View_Proveedor">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="505.0" prefWidth="929.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.proveedor.Controller_View_Proveedor">
     <children>
-        <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+        <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="514.0" prefWidth="930.0" styleClass="panelprincipal" stylesheets="@styles.css">
             <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="890.0">
                     <children>
-                        <Label alignment="CENTER" layoutX="173.0" layoutY="13.0" text="PROVEEDOR" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                        <Label alignment="CENTER" layoutX="311.0" layoutY="13.0" prefHeight="57.0" prefWidth="267.0" styleClass="labelLogo" stylesheets="@styles.css" text="Proveedor" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                             <font>
-                                <Font name="Tahoma Bold" size="40.0" />
+                                <Font name="JetBrains Mono Bold" size="40.0" />
                             </font>
                         </Label>
-                        <Button fx:id="bt_back" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" text="BACK" />
+                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="50.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
                     </children>
                 </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="464.0" prefWidth="901.0">
                     <children>
-                        <ButtonBar layoutX="11.0" layoutY="262.0" prefHeight="40.0" prefWidth="574.0">
+                        <ButtonBar layoutX="619.0" layoutY="336.0" prefHeight="40.0" prefWidth="260.0">
                             <buttons>
-                                <Button fx:id="bt_insert" mnemonicParsing="false" style="-fx-background-color: #17ce7b;" text="Insert" />
-                                <Button fx:id="bt_update" mnemonicParsing="false" style="-fx-background-color: #17c9ce;" text="Update" />
-                                <Button fx:id="bt_delete" mnemonicParsing="false" style="-fx-background-color: #bf281a;" text="Delete" />
+                                <Button fx:id="bt_insert" mnemonicParsing="false" styleClass="buttonInsert" stylesheets="@styles.css" text="Insert" />
+                                <Button fx:id="bt_update" mnemonicParsing="false" styleClass="buttonUpdate" stylesheets="@styles.css" text="Update" />
+                                <Button fx:id="bt_delete" mnemonicParsing="false" prefHeight="25.0" styleClass="buttonDelete" stylesheets="@styles.css" text="Delete" />
 
                             </buttons>
                         </ButtonBar>
-                        <TextField fx:id="txt_nomproveedor" layoutX="61.0" layoutY="23.0" prefHeight="25.0" prefWidth="127.0" promptText="Nombre" />
-                        <TextField fx:id="txt_telefonoproveedor" layoutX="61.0" layoutY="61.0" prefHeight="25.0" prefWidth="127.0" promptText="Teléfono" />
-                        <TextField fx:id="txt_mailproveedor" layoutX="61.0" layoutY="99.0" prefHeight="25.0" prefWidth="127.0" promptText="Email" />
-                        <TextArea fx:id="txt_direccionproveedor" layoutX="61.0" layoutY="138.0" prefHeight="117.0" prefWidth="127.0" promptText="Dirección" />
-                        <Label layoutX="8.0" layoutY="27.0" text="Nombre" />
-                        <Label layoutX="5.0" layoutY="65.0" text="Teléfono" />
-                        <Label layoutX="7.0" layoutY="103.0" text="Email" />
-                        <Label layoutX="5.0" layoutY="138.0" text="Dirección" />
-                        <TableView fx:id="table_REFRESHProveedor" layoutX="193.0" layoutY="24.0" prefHeight="232.0" prefWidth="398.0">
+                        <TextField fx:id="txt_nomproveedor" layoutX="75.0" layoutY="25.0" prefHeight="25.0" prefWidth="127.0" promptText="Nombre" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_telefonoproveedor" layoutX="75.0" layoutY="70.0" prefHeight="25.0" prefWidth="127.0" promptText="Teléfono" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_mailproveedor" layoutX="75.0" layoutY="116.0" prefHeight="25.0" prefWidth="127.0" promptText="Email" stylesheets="@styles.css" />
+                        <TextArea fx:id="txt_direccionproveedor" layoutX="75.0" layoutY="163.0" prefHeight="162.0" prefWidth="127.0" promptText="Dirección" styleClass="text-area" stylesheets="@styles.css" />
+                        <Label layoutX="8.0" layoutY="27.0" stylesheets="@styles.css" text="Nombre" />
+                        <Label layoutX="5.0" layoutY="72.0" stylesheets="@styles.css" text="Teléfono" />
+                        <Label layoutX="7.0" layoutY="119.0" stylesheets="@styles.css" text="Email" />
+                        <Label layoutX="5.0" layoutY="163.0" stylesheets="@styles.css" text="Dirección" />
+                        <TableView fx:id="table_REFRESHProveedor" layoutX="211.0" layoutY="10.0" prefHeight="318.0" prefWidth="687.0" stylesheets="@styles.css">
                             <columns>
-                                <TableColumn fx:id="col_ProveedorID" text="ID" />
-                                <TableColumn fx:id="col_nombre" text="Nombre" />
-                                <TableColumn fx:id="col_telefono" text="Teléfono" />
-                                <TableColumn fx:id="col_email" text="Email" />
-                                <TableColumn fx:id="col_direccion" text="Dirección" />
+                                <TableColumn fx:id="col_ProveedorID" prefWidth="59.20001220703125" text="ID" />
+                                <TableColumn fx:id="col_nombre" prefWidth="120.0" text="Nombre" />
+                                <TableColumn fx:id="col_telefono" prefWidth="91.0" text="Teléfono" />
+                                <TableColumn fx:id="col_email" prefWidth="161.79998779296875" text="Email" />
+                                <TableColumn fx:id="col_direccion" prefWidth="257.39996337890625" text="Dirección" />
                             </columns>
                         </TableView>
                     </children>
