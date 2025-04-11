@@ -192,4 +192,45 @@ public class DBUtils {
     }
 
 
+
+    //CRUD CONTACTO PROVEEDOR
+    public static void insertContactoProveedor(int IDProveedor, String TipoContacto, String DetalleContacto) throws SQLException {
+        String query = "INSERT INTO contacto_proveedor (ProveedorID, TipoContacto, DetalleContacto) VALUES (?, ?, ?)";
+        try (Connection connection = getConnection();
+             PreparedStatement psInsert = connection.prepareStatement(query)) {
+
+            psInsert.setInt(1,IDProveedor);
+            psInsert.setString(2, TipoContacto);
+            psInsert.setString(3, DetalleContacto);
+            psInsert.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error al insertar el proveedor: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public static void updateContactoProveedor(int IDProveedor, String TipoContacto, String DetalleContacto) throws SQLException {
+        String query = "UPDATE contacto_proveedor SET TipoContacto = ?, DetalleContacto = ? WHERE ProveedorID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psUpdate = connection.prepareStatement(query)) {
+            psUpdate.setString(1, TipoContacto);
+            psUpdate.setString(2, DetalleContacto);
+            psUpdate.setInt(3, IDProveedor); // Cambiar el orden
+            psUpdate.executeUpdate();
+        }
+    }
+
+    public static void deleteContactoProveedor(int IDProveedor) throws SQLException {
+        String query = "DELETE FROM contacto_proveedor WHERE ProveedorID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psDelete = connection.prepareStatement(query)) {
+            psDelete.setInt(1, IDProveedor);
+            psDelete.executeUpdate();
+        }
+
+    }
+
+
+
+
 }

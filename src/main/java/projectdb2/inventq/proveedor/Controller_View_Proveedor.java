@@ -134,6 +134,10 @@ public class Controller_View_Proveedor implements Initializable {
             }
         });
 
+
+
+
+
         // Configura el evento para el botón de "Eliminar"
         bt_delete.setOnAction(event -> {
             IDInputDialog idDialog = new IDInputDialog();
