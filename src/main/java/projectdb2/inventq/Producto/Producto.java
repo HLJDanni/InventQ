@@ -1,0 +1,44 @@
+package projectdb2.inventq.Producto;
+
+public class Producto {
+
+    private int ProductoID; // ID del producto
+    private String nombre; // Nombre del producto
+    private String descripcion; // Descripción del producto
+    private double precio; // Precio del producto
+
+    // Constructor
+    public Producto(int productoID, String nombre, String descripcion, double precio) {
+        this.ProductoID = productoID;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+    }
+
+    // Getter para ProductoID
+    public int getProductoID() { // Corregido el nombre del método
+        return ProductoID;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" + // Corregido: Cambié "Proveedor" a "Producto"
+                "ProductoID=" + ProductoID +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio + // Corregido: Cambié a precio sin comillas
+                '}';
+    }
+}

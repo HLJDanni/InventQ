@@ -6,7 +6,7 @@
 
 <!-- Este es un comentario en FXML -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="505.0" prefWidth="929.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.proveedor.Controller_View_Proveedor">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="505.0" prefWidth="929.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.Producto.Controller_View_Producto">
     <children>
         <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="514.0" prefWidth="930.0" styleClass="panelprincipal" stylesheets="@styles.css">
             <items>
@@ -30,21 +30,18 @@
 
                             </buttons>
                         </ButtonBar>
-                        <TextField fx:id="txt_nomproveedor" layoutX="75.0" layoutY="25.0" prefHeight="25.0" prefWidth="127.0" promptText="Nombre" stylesheets="@styles.css" />
-                        <TextField fx:id="txt_telefonoproveedor" layoutX="75.0" layoutY="70.0" prefHeight="25.0" prefWidth="127.0" promptText="Teléfono" stylesheets="@styles.css" />
-                        <TextField fx:id="txt_mailproveedor" layoutX="75.0" layoutY="116.0" prefHeight="25.0" prefWidth="127.0" promptText="Email" stylesheets="@styles.css" />
-                        <TextArea fx:id="txt_direccionproveedor" layoutX="75.0" layoutY="163.0" prefHeight="162.0" prefWidth="127.0" promptText="Dirección" styleClass="text-area" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_nomproducto" layoutX="96.0" layoutY="17.0" prefHeight="25.0" prefWidth="127.0" promptText="Nombre" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_descripcionprod" layoutX="96.0" layoutY="62.0" prefHeight="99.0" prefWidth="127.0" promptText="Descripción" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_precioprod" layoutX="96.0" layoutY="167.0" prefHeight="29.0" prefWidth="127.0" promptText="Precio" stylesheets="@styles.css" />
                         <Label layoutX="8.0" layoutY="27.0" stylesheets="@styles.css" text="Nombre" />
-                        <Label layoutX="5.0" layoutY="72.0" stylesheets="@styles.css" text="Teléfono" />
-                        <Label layoutX="7.0" layoutY="119.0" stylesheets="@styles.css" text="Email" />
-                        <Label layoutX="5.0" layoutY="163.0" stylesheets="@styles.css" text="Dirección" />
-                        <TableView fx:id="table_REFRESHProveedor" layoutX="211.0" layoutY="10.0" prefHeight="318.0" prefWidth="687.0" stylesheets="@styles.css">
+                        <Label layoutX="5.0" layoutY="72.0" prefHeight="21.0" prefWidth="82.0" stylesheets="@styles.css" text="Descripción" />
+                        <Label layoutX="14.0" layoutY="178.0" stylesheets="@styles.css" text="Precio" />
+                        <TableView fx:id="table_REFRESHProducto" layoutX="232.0" prefHeight="335.0" prefWidth="658.0">
                             <columns>
-                                <TableColumn fx:id="col_ProveedorID" prefWidth="59.20001220703125" text="ID" />
-                                <TableColumn fx:id="col_nombre" prefWidth="120.0" text="Nombre" />
-                                <TableColumn fx:id="col_telefono" prefWidth="91.0" text="Teléfono" />
-                                <TableColumn fx:id="col_email" prefWidth="161.79998779296875" text="Email" />
-                                <TableColumn fx:id="col_direccion" prefWidth="257.39996337890625" text="Dirección" />
+                                <TableColumn fx:id="col_ProductoID" text="ID" />
+                                <TableColumn fx:id="col_nombre" text="Nombre" />
+                                <TableColumn fx:id="col_descripcion" text="Descripción" />
+                                <TableColumn fx:id="col_precio" text="Precio" />
                             </columns>
                         </TableView>
                     </children>
