@@ -232,5 +232,121 @@ public class DBUtils {
 
 
 
+    //CRUD CATEGORIA
+    public static void insertCategoria(int CategoriaID, String Nombre) throws SQLException {
+        String query = "INSERT INTO categoria (Nombre) VALUES (?)";
+        try (Connection connection = getConnection();
+             PreparedStatement psInsert = connection.prepareStatement(query)) {
 
+            //psInsert.setInt(1,CategoriaID);
+            psInsert.setString(1, Nombre);
+            psInsert.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error al insertar el proveedor: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public static void updateCategoria(int CategoriaID, String Nombre) throws SQLException {
+        String query = "UPDATE categoria SET nombre = ? WHERE CategoriaID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psUpdate = connection.prepareStatement(query)) {
+            psUpdate.setString(1, Nombre);
+            psUpdate.setInt(2, CategoriaID); // Cambiar el orden
+            psUpdate.executeUpdate();
+        }
+    }
+
+    public static void deleteCategoria(int CategoriaID) throws SQLException {
+        String query = "DELETE FROM categoria WHERE CategoriaID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psDelete = connection.prepareStatement(query)) {
+            psDelete.setInt(1, CategoriaID);
+            psDelete.executeUpdate();
+        }
+    }
+
+
+
+    //CRUD PRODUCTO
+    public static void insertProducto(String Nombre, String Descripcion, double Precio) throws SQLException {
+        String query = "INSERT INTO producto (Nombre, Descripcion, Precio) VALUES (?, ?, ?)";
+        try (Connection connection = getConnection();
+             PreparedStatement psInsert = connection.prepareStatement(query)) {
+
+           // psInsert.setInt(1,ProductoID);
+            psInsert.setString(1, Nombre);
+            psInsert.setString(2, Descripcion);
+            psInsert.setDouble(3, Precio);
+            psInsert.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error al insertar el proveedor: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public static void updateProducto(int ProductoID, String Nombre, String Descripcion, double Precio) throws SQLException {
+        String query = "UPDATE producto SET nombre = ?, descripcion = ?, precio = ? WHERE ProductoID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psUpdate = connection.prepareStatement(query)) {
+            psUpdate.setString(1, Nombre);
+            psUpdate.setString(2, Descripcion);
+            psUpdate.setDouble(3, Precio);
+            psUpdate.setInt(4, ProductoID); // Cambiar el orden
+            psUpdate.executeUpdate();
+        }
+    }
+
+    public static void deleteProducto(int ProductoID) throws SQLException {
+        String query = "DELETE FROM producto WHERE ProductoID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psDelete = connection.prepareStatement(query)) {
+            psDelete.setInt(1, ProductoID);
+            psDelete.executeUpdate();
+        }
+    }
+
+
+
+    //CRUD movimiento_inventario
+    public static void insertMovimientoInventario(int productoID, String tipoMovimiento, int cantidad, Timestamp fechaMovimiento, int proveedorID) throws SQLException {
+        String query = "INSERT INTO movimiento_inventario (ProductoID, TipoMovimiento, Cantidad, FechaMovimiento, ProveedorID) VALUES (?, ?, ?, ?, ?)";
+        try (Connection connection = getConnection();
+             PreparedStatement psInsert = connection.prepareStatement(query)) {
+
+            psInsert.setInt(1, productoID);
+            psInsert.setString(2, tipoMovimiento);
+            psInsert.setInt(3, cantidad);
+            psInsert.setTimestamp(4, fechaMovimiento);
+            psInsert.setInt(5, proveedorID);
+
+            psInsert.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error al insertar en movimiento_inventario: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public static void updateMovimientoInventario(int MovimientoID, int productoID, String tipoMovimiento, int cantidad, Timestamp fechaMovimiento, int proveedorID) throws SQLException {
+        String query = "UPDATE movimiento_inventario SET productoID = ?, tipoMovimiento = ?, cantidad = ?, fechaMovimiento = ?, proveedorID = ? WHERE MovimientoID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psUpdate = connection.prepareStatement(query)) {
+            psUpdate.setInt(1, productoID);
+            psUpdate.setString(2, tipoMovimiento);
+            psUpdate.setInt(3, cantidad);
+            psUpdate.setTimestamp(4, fechaMovimiento);
+            psUpdate.setInt(5, proveedorID);
+            psUpdate.setInt(6, MovimientoID); // Cambiar el orden
+            psUpdate.executeUpdate();
+        }
+    }
+
+    public static void deleteMovimientoInventario(int MovimientoID) throws SQLException {
+        String query = "DELETE FROM movimiento_inventario WHERE MovimientoID = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement psDelete = connection.prepareStatement(query)) {
+            psDelete.setInt(1, MovimientoID);
+            psDelete.executeUpdate();
+        }
+    }
 }
