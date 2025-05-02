@@ -22,6 +22,9 @@ public class InAppController implements Initializable {
     @FXML
     private Button bt_contactProveedor;
 
+    @FXML
+    private Button bt_Producto;
+
     public void setUserInformation(String username, String favChannel) {
         usernameLabel.setText(username); // Asigna el nombre de usuario a la etiqueta
         favChannelLabel.setText(favChannel); // Asigna el canal favorito a la etiqueta
@@ -38,6 +41,12 @@ public class InAppController implements Initializable {
         bt_contactProveedor.setOnAction(event -> {
             DBUtils.changeScene(event,"View_ContactoProveedor.fxml","Contacto Proveedor",null,null);
         });
+
+        bt_Producto.setOnAction(event -> {
+            DBUtils.changeScene(event,"View_Producto.fxml","Producto",null,null);
+        });
+
+
     }
 
 
