@@ -19,6 +19,11 @@
                      <Font name="JetBrains Mono Bold" size="48.0" />
                   </font>
                </Label>
+               <Button fx:id="PBI" contentDisplay="CENTER" layoutX="147.0" layoutY="308.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="81.0" styleClass="buttonBack" stylesheets="@styles.css" text="Power BI" textAlignment="CENTER">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="12.0" />
+                  </font>
+               </Button>
             </children></AnchorPane>
       </right>
       <left>
@@ -28,15 +33,11 @@
                   <font>
                      <Font name="JetBrains Mono Regular" size="12.0" />
                   </font></Button>
-               <Button layoutX="15.0" layoutY="115.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Categoria de Prod" textAlignment="CENTER">
+               <Button layoutX="16.0" layoutY="228.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Categoria de Prod" textAlignment="CENTER">
                   <font>
                      <Font name="JetBrains Mono Regular" size="12.0" />
                   </font></Button>
-               <Button fx:id="bt_Producto" layoutX="15.0" layoutY="165.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Producto" textAlignment="CENTER">
-                  <font>
-                     <Font name="JetBrains Mono Regular" size="12.0" />
-                  </font></Button>
-               <Button layoutX="15.0" layoutY="213.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="170.0" stylesheets="@styles.css" text="Producto Categoría" textAlignment="CENTER">
+               <Button fx:id="bt_Producto" layoutX="16.0" layoutY="180.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Producto" textAlignment="CENTER">
                   <font>
                      <Font name="JetBrains Mono Regular" size="12.0" />
                   </font></Button>
@@ -44,15 +45,10 @@
                   <font>
                      <Font name="JetBrains Mono Regular" size="12.0" />
                   </font></Button>
-               <Button layoutX="14.0" layoutY="265.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="172.0" stylesheets="@styles.css" text="Movimiento Inventario" textAlignment="CENTER">
+               <Button layoutX="17.0" layoutY="309.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="172.0" stylesheets="@styles.css" text="Movimiento Inventario" textAlignment="CENTER">
                   <font>
                      <Font name="JetBrains Mono Regular" size="12.0" />
                   </font></Button>
-               <Button layoutX="14.0" layoutY="312.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Users" textAlignment="CENTER">
-                  <font>
-                     <Font name="JetBrains Mono Regular" size="12.0" />
-                  </font>
-               </Button>
             </children>
          </AnchorPane>
       </left>

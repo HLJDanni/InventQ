@@ -5,7 +5,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.OpenOption;
 import java.util.ResourceBundle;
 
 public class InAppController implements Initializable {
@@ -24,6 +29,9 @@ public class InAppController implements Initializable {
 
     @FXML
     private Button bt_Producto;
+
+    @FXML
+    private Button PBI;
 
     public void setUserInformation(String username, String favChannel) {
         usernameLabel.setText(username); // Asigna el nombre de usuario a la etiqueta
@@ -46,9 +54,27 @@ public class InAppController implements Initializable {
             DBUtils.changeScene(event,"View_Producto.fxml","Producto",null,null);
         });
 
+        PBI.setOnAction(event -> {
+            openFileInSameDirectory("C:/Users/hljda/OneDrive/Escritorio/InventQ/DASHBOARD.pbix");
+        });
 
     }
 
+    private void openFileInSameDirectory(String filePath) {
+        try {
+            // Crea un objeto File con la ruta absoluta del archivo
+            File file = new File(filePath);
 
-
+            // Verifica si el archivo existe antes de intentar abrirlo
+            if (file.exists()) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.open(file); // Abre el archivo con la aplicación predeterminada
+            } else {
+                System.out.println("El archivo no existe en la ruta especificada.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
