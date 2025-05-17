@@ -6,13 +6,15 @@ public class Producto {
     private String nombre; // Nombre del producto
     private String descripcion; // Descripción del producto
     private double precio; // Precio del producto
+    private int ID_Categoria;
 
     // Constructor
-    public Producto(int productoID, String nombre, String descripcion, double precio) {
+    public Producto(int productoID, String nombre, String descripcion, double precio, int ID_Categoria) {
         this.ProductoID = productoID;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.ID_Categoria = ID_Categoria;
     }
 
     // Getter para ProductoID
@@ -32,13 +34,18 @@ public class Producto {
         return precio;
     }
 
+    public int getID_Categoria() {
+        return ID_Categoria;
+    }
+
     @Override
     public String toString() {
         return "Producto{" + // Corregido: Cambié "Proveedor" a "Producto"
                 "ProductoID=" + ProductoID +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", precio=" + precio + // Corregido: Cambié a precio sin comillas
+                ", precio=" + precio +
+                ", ID_Categoria="+ ID_Categoria +// Corregido: Cambié a precio sin comillas
                 '}';
     }
 }

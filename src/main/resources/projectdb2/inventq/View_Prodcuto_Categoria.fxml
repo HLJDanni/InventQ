@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- Este es un comentario en FXML -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="541.0" prefWidth="856.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.Producto.Controller_View_Categoria">
+    <children>
+        <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="866.0" styleClass="panelprincipal" stylesheets="@styles.css">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="890.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="73.0" layoutY="19.0" prefHeight="65.0" prefWidth="706.0" styleClass="labelLogo" stylesheets="@styles.css" text="Categoría de Productos" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                            <font>
+                                <Font name="JetBrains Mono Bold" size="40.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="50.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="901.0">
+                    <children>
+                        <ButtonBar layoutX="547.0" layoutY="365.0" prefHeight="40.0" prefWidth="235.0">
+                            <buttons>
+                                <Button fx:id="bt_insert" mnemonicParsing="false" styleClass="buttonInsert" stylesheets="@styles.css" text="Insert" />
+                                <Button fx:id="bt_update" mnemonicParsing="false" styleClass="buttonUpdate" stylesheets="@styles.css" text="Update" />
+                                <Button fx:id="bt_delete" mnemonicParsing="false" prefHeight="25.0" styleClass="buttonDelete" stylesheets="@styles.css" text="Delete" />
+
+                            </buttons>
+                        </ButtonBar>
+                        <TextField fx:id="txt_nombreCategoria" layoutX="140.0" layoutY="172.0" prefHeight="42.0" prefWidth="178.0" promptText="Nombre de la Categoria" stylesheets="@styles.css" />
+                        <Label layoutX="29.0" layoutY="182.0" stylesheets="@styles.css" text="Nombre" />
+                  <TableView fx:id="table_REFRESHCategoria" layoutX="487.0" layoutY="17.0" prefHeight="330.0" prefWidth="325.0" stylesheets="@styles.css">
+                     <columns>
+                        <TableColumn fx:id="col_ID_Categoria" prefWidth="100.0" text="ID Categoría" />
+                        <TableColumn fx:id="col_nombre" prefWidth="253.0" text="Nombre" />
+                     </columns>
+                  </TableView>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

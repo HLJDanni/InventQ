@@ -42,8 +42,11 @@
                                 <TableColumn fx:id="col_nombre" text="Nombre" />
                                 <TableColumn fx:id="col_descripcion" text="Descripción" />
                                 <TableColumn fx:id="col_precio" text="Precio" />
+                        <TableColumn fx:id="col_IDCategoria" prefWidth="105.0" text="ID Categoria" />
                             </columns>
                         </TableView>
+                  <Label layoutX="4.0" layoutY="252.0" text="ID Categoria" />
+                  <TextField fx:id="txt_id_categoria" layoutX="96.0" layoutY="242.0" prefHeight="29.0" prefWidth="127.0" promptText="ID Categoria" stylesheets="@styles.css" />
                     </children>
                 </AnchorPane>
             </items>

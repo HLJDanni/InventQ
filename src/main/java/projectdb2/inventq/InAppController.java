@@ -33,6 +33,9 @@ public class InAppController implements Initializable {
     @FXML
     private Button PBI;
 
+    @FXML
+    private Button bt_Cat_Prod;
+
     public void setUserInformation(String username, String favChannel) {
         usernameLabel.setText(username); // Asigna el nombre de usuario a la etiqueta
         favChannelLabel.setText(favChannel); // Asigna el canal favorito a la etiqueta
@@ -52,6 +55,10 @@ public class InAppController implements Initializable {
 
         bt_Producto.setOnAction(event -> {
             DBUtils.changeScene(event,"View_Producto.fxml","Producto",null,null);
+        });
+
+        bt_Cat_Prod.setOnAction( event -> {
+            DBUtils.changeScene(event,"View_Prodcuto_Categoria.fxml","Categoría de Productos",null,null);
         });
 
         PBI.setOnAction(event -> {

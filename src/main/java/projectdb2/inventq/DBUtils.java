@@ -233,7 +233,7 @@ public class DBUtils {
 
 
     //CRUD CATEGORIA
-    public static void insertCategoria(int CategoriaID, String Nombre) throws SQLException {
+    public static void insertCategoria(String Nombre) throws SQLException {
         String query = "INSERT INTO categoria (Nombre) VALUES (?)";
         try (Connection connection = getConnection();
              PreparedStatement psInsert = connection.prepareStatement(query)) {
@@ -269,8 +269,8 @@ public class DBUtils {
 
 
     //CRUD PRODUCTO
-    public static void insertProducto(String Nombre, String Descripcion, double Precio) throws SQLException {
-        String query = "INSERT INTO producto (Nombre, Descripcion, Precio) VALUES (?, ?, ?)";
+    public static void insertProducto(String Nombre, String Descripcion, double Precio, int ID_Categoria) throws SQLException {
+        String query = "INSERT INTO producto (Nombre, Descripcion, Precio,ID_Categoria) VALUES (?, ?, ?,?)";
         try (Connection connection = getConnection();
              PreparedStatement psInsert = connection.prepareStatement(query)) {
 
@@ -278,21 +278,23 @@ public class DBUtils {
             psInsert.setString(1, Nombre);
             psInsert.setString(2, Descripcion);
             psInsert.setDouble(3, Precio);
+            psInsert.setInt(4, ID_Categoria);
             psInsert.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error al insertar el proveedor: " + e.getMessage());
+            System.out.println("Error al insertar el Prodcuto: " + e.getMessage());
             throw e;
         }
     }
 
-    public static void updateProducto(int ProductoID, String Nombre, String Descripcion, double Precio) throws SQLException {
-        String query = "UPDATE producto SET nombre = ?, descripcion = ?, precio = ? WHERE ProductoID = ?";
+    public static void updateProducto(int ProductoID, String Nombre, String Descripcion, double Precio, int ID_Categoria) throws SQLException {
+        String query = "UPDATE producto SET nombre = ?, descripcion = ?, precio = ?, ID_Categoria WHERE ProductoID = ?";
         try (Connection connection = getConnection();
              PreparedStatement psUpdate = connection.prepareStatement(query)) {
             psUpdate.setString(1, Nombre);
             psUpdate.setString(2, Descripcion);
             psUpdate.setDouble(3, Precio);
             psUpdate.setInt(4, ProductoID); // Cambiar el orden
+            psUpdate.setInt(5, ID_Categoria);
             psUpdate.executeUpdate();
         }
     }

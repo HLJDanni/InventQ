@@ -10,7 +10,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import projectdb2.inventq.DBUtils;
-import projectdb2.inventq.proveedor.ContactoProveedor;
 import projectdb2.inventq.proveedor.IDInputDialog;
 import projectdb2.inventq.proveedor.Proveedor;
 
@@ -25,13 +24,7 @@ import java.util.ResourceBundle;
 public class Controller_View_Categoria implements Initializable {
 
     @FXML
-    private TextField txt_IDProveedor;
-
-    @FXML
-    private TextField txt_TipoContacto;
-
-    @FXML
-    private TextField txt_DetalleContacto;
+    private TextField txt_nombreCategoria;
 
     @FXML
     private Button bt_insert;
@@ -43,72 +36,50 @@ public class Controller_View_Categoria implements Initializable {
     private Button bt_update;
 
     @FXML
-    private TableColumn<Proveedor, Integer> col_ProveedorID;
+    private TableColumn<Categoria, Integer> col_ID_Categoria;
     @FXML
-    private TableColumn<Proveedor, String> col_nombre;
+    private TableColumn<Categoria, String> col_nombre;
+
     @FXML
-    private TableColumn<Proveedor, String> col_telefono;
-    @FXML
-    private TableColumn<Proveedor, String> col_email;
-    @FXML
-    private TableColumn<Proveedor, String> col_direccion;
-    @FXML
-    private TableView<Proveedor> table_REFRESHProveedor;
+    private TableView<Categoria> table_REFRESHCategoria;
 
     @FXML
     private Button bt_back;
 
-    private ObservableList<Proveedor> proveedorList = FXCollections.observableArrayList();
-
-    @FXML
-    private TableColumn<ContactoProveedor, Integer> col_IDProveedor;
-    @FXML
-    private TableColumn<ContactoProveedor, String> col_TipoContacto;
-    @FXML
-    private TableColumn<ContactoProveedor, String> col_DetalleContacto;
-    @FXML
-    private TableView<ContactoProveedor> table_REFRESHContactoProveedor;
-
-    private ObservableList<ContactoProveedor> ContactoProveedorList = FXCollections.observableArrayList();
+    private ObservableList<Categoria> categoriaList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadDataContactoProveedor();
         loadData();
 
+
         bt_back.setOnAction(event -> {
-            DBUtils.changeScene(event, "InApp.fxml", "Proveedor", null, null);
+            DBUtils.changeScene(event, "InApp.fxml", "Categoría de Productos", null, null);
         });
 
-        col_IDProveedor.setCellValueFactory(new PropertyValueFactory<>("proveedorID"));
-        col_TipoContacto.setCellValueFactory(new PropertyValueFactory<>("tipoContacto"));
-        col_DetalleContacto.setCellValueFactory(new PropertyValueFactory<>("detalleContacto"));
+        col_ID_Categoria.setCellValueFactory(new PropertyValueFactory<>("CategoriaID"));
+        col_nombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
 
-        col_ProveedorID.setCellValueFactory(new PropertyValueFactory<>("proveedorID"));
-        col_nombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        col_telefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
-        col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        col_direccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
 
 
         bt_insert.setOnAction(event -> {
             try{
-                int ID = Integer.parseInt(txt_IDProveedor.getText());
-                String TipoContacto = txt_TipoContacto.getText();
-                String DetalleContacto = txt_DetalleContacto.getText();
 
-                if (TipoContacto.isEmpty() || DetalleContacto.isEmpty()) {
+                String Nombre = txt_nombreCategoria.getText();
+
+
+                if (Nombre.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Debe ingresar los campos completos");
                 System.out.print("Debe ingresar los campos");
 
                 }
-                DBUtils.insertContactoProveedor(ID, TipoContacto, DetalleContacto);
-                JOptionPane.showMessageDialog(null, "Contacto"+ ID+"agregado exitosamente");
-                loadDataContactoProveedor();
-                System.out.println("Contacto: " + ID + "se ingresó correctamente");
-                loadDataContactoProveedor();
+                DBUtils.insertCategoria(Nombre);
+                JOptionPane.showMessageDialog(null, "Categoría"+ Nombre+"agregado exitosamente");
+                loadData();
+                System.out.println("Categoría: " + Nombre + "se ingresó correctamente");
+                loadData();
             } catch (SQLException e) {
-                System.out.println("Error al insertar contacto");
+                System.out.println("Error al insertar Categoria");
                 e.printStackTrace();
             }
 
@@ -119,25 +90,25 @@ public class Controller_View_Categoria implements Initializable {
             String idStr = idDialog.display(); // Obtiene el ID ingresado
 
             if (idStr != null && !idStr.isEmpty()) {
-                int id = Integer.parseInt(idStr); // Convierte el ID de String a int
+                int CategoriaID = Integer.parseInt(idStr); // Convierte el ID de String a int
 
                 try{
-                    int ID = Integer.parseInt(txt_IDProveedor.getText());
-                    String TipoContacto = txt_TipoContacto.getText();
-                    String DetalleContacto = txt_DetalleContacto.getText();
 
-                    if (TipoContacto.isEmpty() || DetalleContacto.isEmpty()) {
+                    String Nombre = txt_nombreCategoria.getText();
+
+
+                    if (Nombre.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Debe ingresar los campos completos");
                         System.out.print("Debe ingresar los campos");
 
                     }
-                    DBUtils.updateContactoProveedor(ID, TipoContacto, DetalleContacto);
-                    JOptionPane.showMessageDialog(null, "Contacto"+ ID+"actualizado exitosamente");
-                    loadDataContactoProveedor();
-                    System.out.println("Contacto: " + ID + "se ingresó correctamente");
-                    loadDataContactoProveedor();
+                    DBUtils.updateCategoria(CategoriaID,Nombre);
+                    JOptionPane.showMessageDialog(null, "Categoria"+ CategoriaID+"actualizado exitosamente");
+                    loadData();
+                    System.out.println("Categoria: " + CategoriaID + "se ingresó correctamente");
+                    loadData();
                 } catch (SQLException e) {
-                    JOptionPane.showMessageDialog(null, "Error al insertar contacto");
+                    JOptionPane.showMessageDialog(null, "Error al insertar Categoria");
                     System.out.println("Error al Actualizar contacto");
                     e.printStackTrace();
                 }
@@ -151,17 +122,17 @@ public class Controller_View_Categoria implements Initializable {
             String idStr = idDialog.display(); // Obtiene el ID ingresado
 
             if (idStr != null && !idStr.isEmpty()) {
-                int id = Integer.parseInt(idStr); // Convierte el ID de String a int
+                int CategoriaID = Integer.parseInt(idStr); // Convierte el ID de String a int
 
                 try {
-                    DBUtils.deleteContactoProveedor(id); // Llama al metodo para eliminar el proveedor
-                    JOptionPane.showMessageDialog(null, "Contacto eliminado exitosamente");
-                    loadDataContactoProveedor();
-                    System.out.println("Contacto eliminado correctamente.");
-                    loadDataContactoProveedor() ; // Actualiza la tabla después de eliminar
+                    DBUtils.deleteCategoria(CategoriaID); // Llama al metodo para eliminar el proveedor
+                    JOptionPane.showMessageDialog(null, "Categoria eliminada exitosamente");
+                    loadData();
+                    System.out.println("Categoria eliminada correctamente.");
+                    loadData() ; // Actualiza la tabla después de eliminar
                 } catch (SQLException e) {
-                    JOptionPane.showMessageDialog(null, "Error al eliminar contacto");
-                    System.out.println("Error al eliminar el Contacto: " + e.getMessage());
+                    JOptionPane.showMessageDialog(null, "Error al eliminar Categoria");
+                    System.out.println("Error al eliminar el Categoria: " + e.getMessage());
                     e.printStackTrace();
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Debe ingresar el ID válido");
@@ -175,45 +146,23 @@ public class Controller_View_Categoria implements Initializable {
 
     }
 
-    private void loadDataContactoProveedor() {
-        String query = "SELECT * FROM contacto_proveedor";
-        try (Connection connection = DBUtils.getConnection();
-             Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery(query)) {
-
-            ContactoProveedorList.clear();
-            while (resultSet.next()) {
-                int id = resultSet.getInt("ProveedorID");
-                String tipoContacto = resultSet.getString("TipoContacto");
-                String detalleContacto = resultSet.getString("DetalleContacto");
-                ContactoProveedorList.add(new ContactoProveedor(id, tipoContacto, detalleContacto));
-            }
-            table_REFRESHContactoProveedor.setItems(ContactoProveedorList);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     private void loadData() {
-        String query = "SELECT * FROM proveedor";
+        String query = "SELECT * FROM categoria";
         try (Connection connection = DBUtils.getConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(query)) {
 
-            proveedorList.clear();
+            categoriaList.clear();
             while (resultSet.next()) {
-                int id = resultSet.getInt("ProveedorID");
-                String nombre = resultSet.getString("Nombre");
-                String telefono = resultSet.getString("Telefono");
-                String email = resultSet.getString("Email");
-                String direccion = resultSet.getString("Direccion");
-
-                proveedorList.add(new Proveedor(id, nombre, telefono, email, direccion));
+                int id = resultSet.getInt("CategoriaID");
+                String Nombre = resultSet.getString("Nombre");
+                categoriaList.add(new Categoria(id, Nombre));
             }
 
-            table_REFRESHProveedor.setItems(proveedorList);
+            table_REFRESHCategoria.setItems(categoriaList);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 }

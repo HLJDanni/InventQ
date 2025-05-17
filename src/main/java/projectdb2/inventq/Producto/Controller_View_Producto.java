@@ -44,6 +44,9 @@ public class Controller_View_Producto implements Initializable {
     @FXML
     private TableColumn<Producto, Double> col_precio; // Corregido: tipo Double
 
+    @FXML
+    private TableColumn<Producto, Integer> col_IDCategoria;
+
     // TEXT DENTRO DE CRUD PRODUCTO
     @FXML
     private TextField txt_nomproducto;
@@ -51,6 +54,9 @@ public class Controller_View_Producto implements Initializable {
     private TextField txt_descripcionprod;
     @FXML
     private TextField txt_precioprod;
+
+    @FXML
+    private TextField txt_id_categoria;
 
     // Declaración de la lista observable de productos
     private ObservableList<Producto> productoList;
@@ -65,10 +71,11 @@ public class Controller_View_Producto implements Initializable {
         col_nombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
         col_descripcion.setCellValueFactory(new PropertyValueFactory<>("Descripcion"));
         col_precio.setCellValueFactory(new PropertyValueFactory<>("Precio"));
+        col_IDCategoria.setCellValueFactory(new PropertyValueFactory<>("ID_Categoria"));
 
         // Configura el evento para el botón de "Volver"
         bt_back.setOnAction(event -> {
-            DBUtils.changeScene(event, "InApp.fxml", "Proveedor", null, null);
+            DBUtils.changeScene(event, "InApp.fxml", "Producto", null, null);
         });
 
         // Configura el evento para el botón de "Insertar"
@@ -77,13 +84,15 @@ public class Controller_View_Producto implements Initializable {
                 String nombre = txt_nomproducto.getText();
                 String descripcion = txt_descripcionprod.getText();
                 double precio = Double.parseDouble(txt_precioprod.getText());
+                int ID_Categoria = Integer.parseInt(txt_id_categoria.getText());
+
 
                 if (nombre.isEmpty() || descripcion.isEmpty()) {
                     System.out.println("Por favor, completa todos los campos.");
                     return; // Salir si hay campos vacíos
                 }
 
-                DBUtils.insertProducto(nombre, descripcion, precio);
+                DBUtils.insertProducto(nombre, descripcion, precio, ID_Categoria);
                 System.out.println("Producto insertado correctamente.");
                 loadData(); // Actualiza la tabla después de insertar
             } catch (SQLException e) {
@@ -106,13 +115,14 @@ public class Controller_View_Producto implements Initializable {
                     String nombre = txt_nomproducto.getText();
                     String descripcion = txt_descripcionprod.getText();
                     double precio = Double.parseDouble(txt_precioprod.getText());
+                    int ID_Categoria = Integer.parseInt(txt_id_categoria.getText());
 
                     if (nombre.isEmpty() || descripcion.isEmpty()) {
                         System.out.println("Por favor, completa todos los campos.");
                         return; // Salir si hay campos vacíos
                     }
 
-                    DBUtils.updateProducto(id, nombre, descripcion, precio);
+                    DBUtils.updateProducto(id, nombre, descripcion, precio, ID_Categoria);
                     System.out.println("Producto actualizado correctamente.");
                     loadData(); // Actualiza la tabla después de la actualización
                 } catch (SQLException e) {
@@ -162,8 +172,9 @@ public class Controller_View_Producto implements Initializable {
                 String nombre = resultSet.getString("Nombre");
                 String descripcion = resultSet.getString("Descripcion");
                 double precio = resultSet.getDouble("Precio");
+                int ID_Categoria = resultSet.getInt("ID_Categoria");
 
-                productoList.add(new Producto(id, nombre, descripcion, precio));
+                productoList.add(new Producto(id, nombre, descripcion, precio, ID_Categoria));
             }
 
             table_REFRESHProducto.setItems(productoList); // Asigna la lista a la tabla
