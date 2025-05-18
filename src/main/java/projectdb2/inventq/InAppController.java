@@ -36,6 +36,10 @@ public class InAppController implements Initializable {
     @FXML
     private Button bt_Cat_Prod;
 
+
+    @FXML
+    private Button BT_Mov;
+
     public void setUserInformation(String username, String favChannel) {
         usernameLabel.setText(username); // Asigna el nombre de usuario a la etiqueta
         favChannelLabel.setText(favChannel); // Asigna el canal favorito a la etiqueta
@@ -60,6 +64,11 @@ public class InAppController implements Initializable {
         bt_Cat_Prod.setOnAction( event -> {
             DBUtils.changeScene(event,"View_Prodcuto_Categoria.fxml","Categoría de Productos",null,null);
         });
+
+        BT_Mov.setOnAction(event -> {
+            DBUtils.changeScene(event,"View_Movimiento_Inventario.fxml","Movimiento del Inventario",null,null);
+        });
+
 
         PBI.setOnAction(event -> {
             openFileInSameDirectory("C:/Users/hljda/OneDrive/Escritorio/InventQ/DASHBOARD.pbix");

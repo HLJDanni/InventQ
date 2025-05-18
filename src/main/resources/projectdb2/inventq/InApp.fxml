@@ -45,7 +45,7 @@
                   <font>
                      <Font name="JetBrains Mono Regular" size="12.0" />
                   </font></Button>
-               <Button layoutX="17.0" layoutY="309.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="172.0" stylesheets="@styles.css" text="Movimiento Inventario" textAlignment="CENTER">
+               <Button fx:id="BT_Mov" layoutX="17.0" layoutY="309.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="172.0" stylesheets="@styles.css" text="Movimiento Inventario" textAlignment="CENTER">
                   <font>
                      <Font name="JetBrains Mono Regular" size="12.0" />
                   </font></Button>

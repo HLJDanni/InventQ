@@ -87,10 +87,10 @@ public class Controller_View_Categoria implements Initializable {
 
         bt_update.setOnAction(event -> {
             IDInputDialog idDialog = new IDInputDialog();
-            String idStr = idDialog.display(); // Obtiene el ID ingresado
+            String idStr = idDialog.display();
 
             if (idStr != null && !idStr.isEmpty()) {
-                int CategoriaID = Integer.parseInt(idStr); // Convierte el ID de String a int
+                int CategoriaID = Integer.parseInt(idStr);
 
                 try{
 
