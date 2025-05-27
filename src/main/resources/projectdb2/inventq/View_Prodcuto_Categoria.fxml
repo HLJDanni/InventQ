@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -17,12 +18,12 @@
                                 <Font name="JetBrains Mono Bold" size="40.0" />
                             </font>
                         </Label>
-                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="50.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
+                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="66.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="901.0">
                     <children>
-                        <ButtonBar layoutX="547.0" layoutY="365.0" prefHeight="40.0" prefWidth="235.0">
+                        <ButtonBar layoutX="537.0" layoutY="365.0" prefHeight="40.0" prefWidth="275.0">
                             <buttons>
                                 <Button fx:id="bt_insert" mnemonicParsing="false" styleClass="buttonInsert" stylesheets="@styles.css" text="Insert" />
                                 <Button fx:id="bt_update" mnemonicParsing="false" styleClass="buttonUpdate" stylesheets="@styles.css" text="Update" />
@@ -31,12 +32,19 @@
                             </buttons>
                         </ButtonBar>
                         <TextField fx:id="txt_nombreCategoria" layoutX="140.0" layoutY="172.0" prefHeight="42.0" prefWidth="178.0" promptText="Nombre de la Categoria" stylesheets="@styles.css" />
-                        <Label layoutX="29.0" layoutY="182.0" stylesheets="@styles.css" text="Nombre" />
+                        <Label layoutX="63.0" layoutY="184.0" stylesheets="@styles.css" text="Nombre" />
                   <TableView fx:id="table_REFRESHCategoria" layoutX="487.0" layoutY="17.0" prefHeight="330.0" prefWidth="325.0" stylesheets="@styles.css">
                      <columns>
-                        <TableColumn fx:id="col_ID_Categoria" prefWidth="100.0" text="ID Categoría" />
-                        <TableColumn fx:id="col_nombre" prefWidth="253.0" text="Nombre" />
+                        <TableColumn fx:id="col_ID_Categoria" prefWidth="100.0" styleClass="column-header-background" text="ID Categoría" />
+                        <TableColumn fx:id="col_nombre" prefWidth="253.0" styleClass="column-header-background" text="Nombre" />
                      </columns>
+                     <styleClass>
+                        <String fx:value="table-azul" />
+                        <String fx:value="table-header" />
+                        <String fx:value="table-cell" />
+                        <String fx:value="table-row-cell" />
+                        <String fx:value="column-header-background" />
+                     </styleClass>
                   </TableView>
                     </children>
                 </AnchorPane>

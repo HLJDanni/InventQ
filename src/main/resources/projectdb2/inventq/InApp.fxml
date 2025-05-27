@@ -9,49 +9,13 @@
       <right>
          <AnchorPane prefHeight="354.0" prefWidth="245.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
             <children>
-               <Label layoutX="24.0" layoutY="149.0" prefHeight="66.0" prefWidth="202.0" styleClass="labelLogo" stylesheets="@styles.css" text="Invent ">
+               <Label layoutX="7.0" layoutY="147.0" prefHeight="66.0" prefWidth="232.0" styleClass="labelLogo" stylesheets="@styles.css" text="InventQ">
                   <font>
                      <Font name="JetBrains Mono Bold" size="48.0" />
                   </font>
                </Label>
-               <Label layoutX="158.0" layoutY="149.0" styleClass="labelQ" stylesheets="@styles.css" text="Q" textFill="#05bf6b">
-                  <font>
-                     <Font name="JetBrains Mono Bold" size="48.0" />
-                  </font>
-               </Label>
-               <Button fx:id="PBI" contentDisplay="CENTER" layoutX="147.0" layoutY="308.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="81.0" styleClass="buttonBack" stylesheets="@styles.css" text="Power BI" textAlignment="CENTER">
-                  <font>
-                     <Font name="JetBrains Mono Regular" size="12.0" />
-                  </font>
-               </Button>
             </children></AnchorPane>
       </right>
-      <left>
-         <AnchorPane prefHeight="353.0" prefWidth="178.0" style="-fx-background-color: #ffffff;" styleClass="panelprincipal" BorderPane.alignment="CENTER">
-            <children>
-               <Button fx:id="bt_proveedor" layoutX="16.0" layoutY="14.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Proveedor" textAlignment="CENTER">
-                  <font>
-                     <Font name="JetBrains Mono Regular" size="12.0" />
-                  </font></Button>
-               <Button fx:id="bt_Cat_Prod" layoutX="16.0" layoutY="228.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Categoria de Prod" textAlignment="CENTER">
-                  <font>
-                     <Font name="JetBrains Mono Regular" size="12.0" />
-                  </font></Button>
-               <Button fx:id="bt_Producto" layoutX="16.0" layoutY="180.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Producto" textAlignment="CENTER">
-                  <font>
-                     <Font name="JetBrains Mono Regular" size="12.0" />
-                  </font></Button>
-               <Button fx:id="bt_contactProveedor" layoutX="17.0" layoutY="66.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Contacto Proveedor" textAlignment="CENTER">
-                  <font>
-                     <Font name="JetBrains Mono Regular" size="12.0" />
-                  </font></Button>
-               <Button fx:id="BT_Mov" layoutX="17.0" layoutY="309.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="172.0" stylesheets="@styles.css" text="Movimiento Inventario" textAlignment="CENTER">
-                  <font>
-                     <Font name="JetBrains Mono Regular" size="12.0" />
-                  </font></Button>
-            </children>
-         </AnchorPane>
-      </left>
       <top> <!-- Asegúrate de que el fx:id coincida con el campo en el controlador -->
          <Label fx:id="favChannelLabel" text="Canal Favorito" BorderPane.alignment="CENTER">
             <font>
@@ -66,6 +30,37 @@
             </graphic>
          </Label>
       </top>
+      <center>
+         <AnchorPane prefHeight="353.0" prefWidth="178.0" style="-fx-background-color: #ffffff;" styleClass="panelprincipal" BorderPane.alignment="CENTER">
+            <children>
+               <Button fx:id="bt_proveedor" layoutX="14.0" layoutY="39.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Proveedor" textAlignment="CENTER">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="12.0" />
+                  </font></Button>
+               <Button fx:id="bt_Cat_Prod" layoutX="14.0" layoutY="186.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Categoria de Prod" textAlignment="CENTER">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="12.0" />
+                  </font></Button>
+               <Button fx:id="bt_Producto" layoutX="15.0" layoutY="135.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Producto" textAlignment="CENTER">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="12.0" />
+                  </font></Button>
+               <Button fx:id="bt_contactProveedor" layoutX="9.0" layoutY="89.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" stylesheets="@styles.css" text="Contacto Proveedor" textAlignment="CENTER">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="12.0" />
+                  </font></Button>
+               <Button fx:id="BT_Mov" layoutX="15.0" layoutY="236.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="172.0" stylesheets="@styles.css" text="Movimiento Inventario" textAlignment="CENTER">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="12.0" />
+                  </font></Button>
+               <Button fx:id="PBI" contentDisplay="CENTER" layoutX="16.0" layoutY="282.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="171.0" styleClass="buttonPBI" stylesheets="@styles.css" text="Power BI" textAlignment="CENTER">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="12.0" />
+                  </font>
+               </Button>
+            </children>
+         </AnchorPane>
+      </center>
    </BorderPane> <!-- Asegúrate de que el fx:id coincida con el campo en el controlador -->
 
 

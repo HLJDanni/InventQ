@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <!-- Este es un comentario en FXML -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="525.0" prefWidth="1215.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.MovimientoInventario.Controller_View_MovimientoInventario">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="532.0" prefWidth="1052.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.MovimientoInventario.Controller_View_MovimientoInventario">
     <children>
-        <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="534.0" prefWidth="1215.0" styleClass="panelprincipal" stylesheets="@styles.css">
+        <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="534.0" prefWidth="1050.0" styleClass="panelprincipal" stylesheets="@styles.css">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="890.0">
                     <children>
@@ -17,41 +18,48 @@
                                 <Font name="JetBrains Mono Bold" size="40.0" />
                             </font>
                         </Label>
-                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="50.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
+                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="75.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
                     </children>
                 </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="420.0" prefWidth="1029.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="1021.0">
                     <children>
-                        <ButtonBar layoutX="902.0" layoutY="333.0" prefHeight="40.0" prefWidth="263.0">
+                        <ButtonBar layoutX="704.0" layoutY="346.0" prefHeight="40.0" prefWidth="286.0">
                             <buttons>
                                 <Button fx:id="bt_insert" minWidth="60.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="127.0" styleClass="buttonInsert" stylesheets="@styles.css" text="Insert" />
-                                <Button fx:id="bt_update" mnemonicParsing="false" styleClass="buttonUpdate" stylesheets="@styles.css" text="Update" />
+                                <Button fx:id="bt_update" mnemonicParsing="false" prefHeight="38.0" styleClass="buttonUpdate" stylesheets="@styles.css" text="Update" />
                                 <Button fx:id="bt_delete" mnemonicParsing="false" prefHeight="25.0" styleClass="buttonDelete" stylesheets="@styles.css" text="Delete" />
 
                             </buttons>
                         </ButtonBar>
-                        <TextField fx:id="txt_Tipo" layoutX="150.0" layoutY="4.0" prefHeight="25.0" prefWidth="127.0" promptText="Entrada - Salida" stylesheets="@styles.css" />
-                        <TextField fx:id="txt_cantidad" layoutX="150.0" layoutY="62.0" prefHeight="25.0" prefWidth="127.0" promptText="Cantidad" stylesheets="@styles.css" />
-                        <TextField fx:id="txt_fecha" layoutX="150.0" layoutY="130.0" prefHeight="25.0" prefWidth="127.0" promptText="##/##/####" stylesheets="@styles.css" />
-                        <Label layoutX="6.0" layoutY="14.0" stylesheets="@styles.css" text="Tipo de Movimiento" />
-                        <Label layoutX="5.0" layoutY="72.0" stylesheets="@styles.css" text="Cantidad" />
-                        <Label layoutX="6.0" layoutY="140.0" stylesheets="@styles.css" text="Fecha" />
-                        <Label layoutX="6.0" layoutY="203.0" stylesheets="@styles.css" text="ID Producto" />
-                  <Label layoutX="2.0" layoutY="264.0" stylesheets="@styles.css" text="ID Proveedor" />
-                        <TableView fx:id="table_REFRESHMovimientoInventario" layoutX="288.0" layoutY="15.0" prefHeight="318.0" prefWidth="877.0" stylesheets="@styles.css">
+                        <TextField fx:id="txt_Tipo" layoutX="150.0" layoutY="25.0" prefHeight="25.0" prefWidth="127.0" promptText="Entrada - Salida" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_cantidad" layoutX="150.0" layoutY="92.0" prefHeight="25.0" prefWidth="127.0" promptText="Cantidad" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_fecha" layoutX="150.0" layoutY="162.0" prefHeight="25.0" prefWidth="127.0" promptText="##/##/####" stylesheets="@styles.css" />
+                        <Label layoutX="9.0" layoutY="37.0" stylesheets="@styles.css" text="Tipo de Movimiento" />
+                        <Label layoutX="9.0" layoutY="104.0" stylesheets="@styles.css" text="Cantidad" />
+                        <Label layoutX="9.0" layoutY="174.0" stylesheets="@styles.css" text="Fecha" />
+                        <Label layoutX="8.0" layoutY="241.0" stylesheets="@styles.css" text="ID Producto" />
+                  <Label layoutX="7.0" layoutY="295.0" stylesheets="@styles.css" text="ID Proveedor" />
+                        <TableView fx:id="table_REFRESHMovimientoInventario" layoutX="288.0" layoutY="15.0" prefHeight="318.0" prefWidth="702.0" stylesheets="@styles.css">
                             <columns>
-                                <TableColumn fx:id="col_ID_Mov" prefWidth="76.0" text="ID Mov" />
-                                <TableColumn fx:id="col_tipo" prefWidth="79.0" text="Tipo" />
-                                <TableColumn fx:id="col_fechaM" prefWidth="77.0" text="Fecha M" />
-                        <TableColumn fx:id="col_nomProd" prefWidth="157.0" text="Nombre Producto" />
-                        <TableColumn fx:id="col_ID_Prod" prefWidth="108.0" text="ID Producto" />
-                                <TableColumn fx:id="col_cantidad" prefWidth="79.0" text="Cantidad" />
-                                <TableColumn fx:id="col_nombreProv" prefWidth="157.0" text="Nombre Proveedor" />
-                        <TableColumn fx:id="col_ID_Prov" prefWidth="141.0" text="ID Proveedor" />
+                                <TableColumn fx:id="col_ID_Mov" prefWidth="76.0" styleClass="column-header-background" text="ID Mov" />
+                                <TableColumn fx:id="col_tipo" prefWidth="79.0" styleClass="column-header-background" text="Tipo" />
+                                <TableColumn fx:id="col_fechaM" prefWidth="206.0" styleClass="column-header-background" text="Fecha M" />
+                        <TableColumn fx:id="col_ID_Prod" prefWidth="93.0" styleClass="column-header-background" text="ID Producto" />
+                                <TableColumn fx:id="col_cantidad" prefWidth="93.0" styleClass="column-header-background" text="Cantidad" />
+                        <TableColumn fx:id="col_ID_Prov" prefWidth="124.0" styleClass="column-header-background" text="ID Proveedor" />
                             </columns>
+                     <styleClass>
+                        <String fx:value="table-azul" />
+                        <String fx:value="table-row-cell" />
+                        <String fx:value="table-header" />
+                        <String fx:value="table-azul" />
+                        <String fx:value="column-header-background" />
+                        <String fx:value="table-view" />
+                        <String fx:value="table-cell" />
+                     </styleClass>
                         </TableView>
-                  <TextField fx:id="txt_idProd" layoutX="150.0" layoutY="193.0" prefHeight="25.0" prefWidth="127.0" promptText="Producto" stylesheets="@styles.css" />
-                  <TextField fx:id="txt_idProv" layoutX="150.0" layoutY="253.0" prefHeight="25.0" prefWidth="127.0" promptText="Proveedor" stylesheets="@styles.css" />
+                  <TextField fx:id="txt_ID_Prod" layoutX="150.0" layoutY="229.0" prefHeight="25.0" prefWidth="127.0" promptText="Producto" stylesheets="@styles.css" />
+                  <TextField fx:id="txt_ID_Prov" layoutX="150.0" layoutY="283.0" prefHeight="25.0" prefWidth="127.0" promptText="Proveedor" stylesheets="@styles.css" />
                     </children>
                 </AnchorPane>
             </items>

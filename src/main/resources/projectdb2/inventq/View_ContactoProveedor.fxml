@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <!-- Este es un comentario en FXML -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="567.0" prefWidth="1185.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.proveedor.Controller_View_ContactoProveedor">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="593.0" prefWidth="1185.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.proveedor.Controller_View_ContactoProveedor">
     <children>
-        <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="1185.0" styleClass="panelprincipal" stylesheets="@styles.css">
+        <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="601.0" prefWidth="1185.0" styleClass="panelprincipal" stylesheets="@styles.css">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="890.0">
                     <children>
@@ -17,12 +18,12 @@
                                 <Font name="JetBrains Mono Bold" size="40.0" />
                             </font>
                         </Label>
-                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="50.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
+                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="66.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
                     </children>
                 </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="970.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="1154.0">
                     <children>
-                        <ButtonBar layoutX="843.0" layoutY="365.0" prefHeight="40.0" prefWidth="260.0">
+                        <ButtonBar layoutX="859.0" layoutY="372.0" prefHeight="40.0" prefWidth="278.0">
                             <buttons>
                                 <Button fx:id="bt_insert" mnemonicParsing="false" styleClass="buttonInsert" stylesheets="@styles.css" text="Insert" />
                                 <Button fx:id="bt_update" mnemonicParsing="false" styleClass="buttonUpdate" stylesheets="@styles.css" text="Update" />
@@ -30,28 +31,43 @@
 
                             </buttons>
                         </ButtonBar>
-                        <TextField fx:id="txt_IDProveedor" layoutX="147.0" layoutY="17.0" prefHeight="42.0" prefWidth="136.0" promptText="ID Proveedor" stylesheets="@styles.css" />
-                        <TextField fx:id="txt_TipoContacto" layoutX="147.0" layoutY="83.0" prefHeight="42.0" prefWidth="136.0" promptText="Tipo de Contacto" stylesheets="@styles.css" />
-                        <TextField fx:id="txt_DetalleContacto" layoutX="147.0" layoutY="139.0" prefHeight="127.0" prefWidth="136.0" promptText="Detalle Contacto" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_IDProveedor" layoutX="147.0" layoutY="17.0" prefHeight="42.0" prefWidth="136.0" promptText="ID Proveedor" styleClass="text-field" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_TipoContacto" layoutX="147.0" layoutY="83.0" prefHeight="42.0" prefWidth="136.0" promptText="Tipo de Contacto" styleClass="text-field" stylesheets="@styles.css" />
+                        <TextField fx:id="txt_DetalleContacto" layoutX="147.0" layoutY="139.0" prefHeight="127.0" prefWidth="136.0" promptText="Detalle Contacto" styleClass="text-field" stylesheets="@styles.css" />
                         <Label layoutX="8.0" layoutY="27.0" stylesheets="@styles.css" text="Proveedor ID" />
                         <Label layoutX="7.0" layoutY="94.0" stylesheets="@styles.css" text="Tipo Contacto" />
                         <Label layoutX="7.0" layoutY="149.0" stylesheets="@styles.css" text="Detalle Contacto" />
-                        <TableView fx:id="table_REFRESHProveedor" layoutX="371.0" layoutY="224.0" prefHeight="127.0" prefWidth="769.0" stylesheets="@styles.css">
+                        <TableView fx:id="table_REFRESHProveedor" layoutX="357.0" layoutY="238.0" prefHeight="127.0" prefWidth="769.0" stylesheets="@styles.css">
                             <columns>
-                                <TableColumn fx:id="col_ProveedorID" prefWidth="59.20001220703125" text="ID" />
-                                <TableColumn fx:id="col_nombre" prefWidth="120.0" text="Nombre" />
-                                <TableColumn fx:id="col_telefono" prefWidth="91.0" text="Teléfono" />
-                                <TableColumn fx:id="col_email" prefWidth="175.0" text="Email" />
-                                <TableColumn fx:id="col_direccion" prefWidth="321.0" text="Dirección" />
+                                <TableColumn fx:id="col_ProveedorID" prefWidth="59.20001220703125" styleClass="column-header-background" text="ID" />
+                                <TableColumn fx:id="col_nombre" prefWidth="120.0" styleClass="column-header-background" text="Nombre" />
+                                <TableColumn fx:id="col_telefono" prefWidth="91.0" styleClass="column-header-background" text="Teléfono" />
+                                <TableColumn fx:id="col_email" prefWidth="175.0" styleClass="column-header-background" text="Email" />
+                                <TableColumn fx:id="col_direccion" prefWidth="321.0" styleClass="column-header-background" text="Dirección" />
                             </columns>
+                     <styleClass>
+                        <String fx:value="column-header-background" />
+                        <String fx:value="table-azul" />
+                        <String fx:value="table-header" />
+                        <String fx:value="table-cell" />
+                        <String fx:value="table-row-cell" />
+                        <String fx:value="table-view" />
+                     </styleClass>
                         </TableView>
-                  <Label layoutX="686.0" layoutY="203.0" text="Tabla Proveedor" />
-                  <TableView fx:id="table_REFRESHContactoProveedor" layoutX="371.0" layoutY="29.0" prefHeight="174.0" prefWidth="769.0" stylesheets="@styles.css">
+                  <Label layoutX="671.0" layoutY="220.0" text="Tabla Proveedor" />
+                  <TableView fx:id="table_REFRESHContactoProveedor" layoutX="357.0" layoutY="25.0" prefHeight="174.0" prefWidth="769.0" stylesheets="@styles.css">
                      <columns>
-                        <TableColumn fx:id="col_IDProveedor" prefWidth="100.0" text="ProveedorID" />
-                        <TableColumn fx:id="col_TipoContacto" prefWidth="253.0" text="Tipo Contacto" />
-                        <TableColumn fx:id="col_DetalleContacto" prefWidth="412.0" text="Detalle Contacto" />
+                        <TableColumn fx:id="col_IDProveedor" prefWidth="100.0" styleClass="column-header-background" text="ProveedorID" />
+                        <TableColumn fx:id="col_TipoContacto" prefWidth="253.0" styleClass="column-header-background" text="Tipo Contacto" />
+                        <TableColumn fx:id="col_DetalleContacto" prefWidth="412.0" styleClass="column-header-background" text="Detalle Contacto" />
                      </columns>
+                     <styleClass>
+                        <String fx:value="table-cell" />
+                        <String fx:value="table-azul" />
+                        <String fx:value="table-header" />
+                        <String fx:value="table-row-cell" />
+                        <String fx:value="column-header-background" />
+                     </styleClass>
                   </TableView>
                     </children>
                 </AnchorPane>

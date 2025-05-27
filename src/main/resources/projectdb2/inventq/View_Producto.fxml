@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <!-- Este es un comentario en FXML -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="505.0" prefWidth="929.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.Producto.Controller_View_Producto">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="756.0" prefHeight="556.0" prefWidth="962.0" styleClass="panelprincipal" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdb2.inventq.Producto.Controller_View_Producto">
     <children>
-        <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="514.0" prefWidth="930.0" styleClass="panelprincipal" stylesheets="@styles.css">
+        <SplitPane dividerPositions="0.2" layoutY="-7.0" orientation="VERTICAL" prefHeight="562.0" prefWidth="962.0" styleClass="panelprincipal" stylesheets="@styles.css">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="890.0">
                     <children>
@@ -17,12 +18,12 @@
                                 <Font name="JetBrains Mono Bold" size="40.0" />
                             </font>
                         </Label>
-                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="50.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
+                        <Button fx:id="bt_back" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="65.0" styleClass="buttonBack" stylesheets="@styles.css" text="Back" />
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="464.0" prefWidth="901.0">
                     <children>
-                        <ButtonBar layoutX="619.0" layoutY="336.0" prefHeight="40.0" prefWidth="260.0">
+                        <ButtonBar layoutX="634.0" layoutY="358.0" prefHeight="40.0" prefWidth="275.0">
                             <buttons>
                                 <Button fx:id="bt_insert" mnemonicParsing="false" styleClass="buttonInsert" stylesheets="@styles.css" text="Insert" />
                                 <Button fx:id="bt_update" mnemonicParsing="false" styleClass="buttonUpdate" stylesheets="@styles.css" text="Update" />
@@ -36,14 +37,22 @@
                         <Label layoutX="8.0" layoutY="27.0" stylesheets="@styles.css" text="Nombre" />
                         <Label layoutX="5.0" layoutY="72.0" prefHeight="21.0" prefWidth="82.0" stylesheets="@styles.css" text="Descripción" />
                         <Label layoutX="14.0" layoutY="178.0" stylesheets="@styles.css" text="Precio" />
-                        <TableView fx:id="table_REFRESHProducto" layoutX="232.0" prefHeight="335.0" prefWidth="658.0">
+                        <TableView fx:id="table_REFRESHProducto" layoutX="233.0" layoutY="11.0" prefHeight="335.0" prefWidth="676.0" stylesheets="@styles.css">
                             <columns>
-                                <TableColumn fx:id="col_ProductoID" text="ID" />
-                                <TableColumn fx:id="col_nombre" text="Nombre" />
-                                <TableColumn fx:id="col_descripcion" text="Descripción" />
-                                <TableColumn fx:id="col_precio" text="Precio" />
-                        <TableColumn fx:id="col_IDCategoria" prefWidth="105.0" text="ID Categoria" />
+                                <TableColumn fx:id="col_ProductoID" prefWidth="60.0" styleClass="column-header-background" text="ID" />
+                                <TableColumn fx:id="col_nombre" prefWidth="202.0" styleClass="column-header-background" text="Nombre" />
+                                <TableColumn fx:id="col_descripcion" prefWidth="193.0" styleClass="column-header-background" text="Descripción" />
+                                <TableColumn fx:id="col_precio" minWidth="0.0" prefWidth="85.0" styleClass="column-header-background" text="Precio" />
+                        <TableColumn fx:id="col_IDCategoria" prefWidth="112.0" styleClass="column-header-background" text="ID Categoria" />
                             </columns>
+                     <styleClass>
+                        <String fx:value="table-azul" />
+                        <String fx:value="table-cell" />
+                        <String fx:value="table-view" />
+                        <String fx:value="table-row-cell" />
+                        <String fx:value="column-header-background" />
+                        <String fx:value="table-header" />
+                     </styleClass>
                         </TableView>
                   <Label layoutX="4.0" layoutY="252.0" text="ID Categoria" />
                   <TextField fx:id="txt_id_categoria" layoutX="96.0" layoutY="242.0" prefHeight="29.0" prefWidth="127.0" promptText="ID Categoria" stylesheets="@styles.css" />
